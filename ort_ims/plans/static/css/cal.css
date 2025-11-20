@@ -1,0 +1,127 @@
+.cal-container .year-month > div:first-child > span,
+.cal-container .year-month .pre,
+.cal-container .year-month .next,
+.cal-container .weeks > ul > li,
+.cal-container .days > ul .style-default {
+    cursor: pointer;
+}
+
+.cal-container .year-month .pre:hover,
+.cal-container .year-month .next:hover,
+.cal-container .weeks > ul > li:hover {
+    text-shadow: 2px 2px 2px rgb(121, 121, 121);
+}
+
+ul li {
+    list-style: none;
+}
+
+.cal-container {
+    display: flex;
+    flex-direction: column;
+    position: block;
+    grid-column: 4;
+    top: 0;
+    width: 320px;
+    height: max-content;
+    box-shadow: 7px 7px 7px rgb(112, 112, 112);
+    background-color: aquamarine;
+}
+
+.cal-container .year-month {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    background-color: rgb(107, 215, 168);
+}
+
+.cal-container .year-month > div:first-child {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    width: 200px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.cal-container .year-month > div:first-child > span {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: white;
+}
+
+.cal-container .year-month > div:first-child > span:first-child {
+    font-size: 32px;
+}
+
+.cal-container .year-month > div:first-child > span:last-child {
+    font-size: 20px;
+}
+
+.cal-container .year-month .pre,
+.cal-container .year-month .next {
+    position: absolute;
+    top: 45%;
+    height: 40px;
+    transform: translateY(-20px);
+    margin: 0 10px;
+    font-size: 40px;
+    color: white;
+}
+
+.cal-container .year-month .next {
+    right: 0;
+}
+
+.cal-container .weeks > ul,
+.cal-container .days > ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    background-color: rgb(241, 202, 202);
+}
+
+.cal-container .days > ul {
+    padding: 20px 0;
+    background-color: rgb(231, 229, 229);
+}
+
+.cal-container .weeks > ul > li {
+    width: calc(100% / 7);
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(75, 75, 75);
+    text-align: center;
+    line-height: 50px;
+}
+
+.no-style {
+    width: calc(100% / 7);
+    height: 25px;
+}
+
+.style-default {
+    width: calc(100% / 7);
+    height: 25px;
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(75, 75, 75);
+    text-align: center;
+    line-height: 100%;
+}
+
+.days > ul .style-default:hover {
+    background-color: rgb(202, 202, 202);
+}
+
+.cal-container .days > ul .bg-style {
+    background-color: rgb(119, 216, 174);
+}

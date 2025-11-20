@@ -1,0 +1,34 @@
+nav {
+    border: 1px solid black;
+    display: block;
+    width: fit-content;
+    position: sticky;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+nav a{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    text-decoration: none;
+    color: #588fbc;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.content {
+    border: 1px solid black;
+    display: grid;
+    width: fit-content;
+    grid-column: auto, auto, auto;
+}
+
+.flash {
+    border: 1px solid black;
+    display: grid;
+    width: fit-content;
+    grid-column: auto, auto, auto;
+}

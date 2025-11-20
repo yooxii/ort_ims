@@ -1,0 +1,541 @@
+[
+    {
+        "model": "plans.ttestitem",
+        "pk": 1,
+        "fields": {
+            "test_item": "Acoustic Noise Test",
+            "test_time": "10",
+            "test_owner": "王世敏",
+            "dispose": "回线",
+            "Remark": "以测试5台为基础计算,每台测试时间为2小时."
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 2,
+        "fields": {
+            "test_item": "Adapter EMI/Drop/Ball Impact",
+            "test_time": "24",
+            "test_owner": "刘唐英/王世敏",
+            "dispose": "报废",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 3,
+        "fields": {
+            "test_item": "Amazon All ORT Test",
+            "test_time": "360",
+            "test_owner": "余军平/王世敏/李志斌/刘唐英",
+            "dispose": "报废",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 4,
+        "fields": {
+            "test_item": "Amazon Mechanical ORT Test",
+            "test_time": "192",
+            "test_owner": "王世敏/李志斌/刘唐英",
+            "dispose": "报废",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 5,
+        "fields": {
+            "test_item": "For AMZ Burn In Test",
+            "test_time": "168",
+            "test_owner": "李志斌",
+            "dispose": "回线",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 6,
+        "fields": {
+            "test_item": "For Dell ORT Test (PC)",
+            "test_time": "226",
+            "test_owner": "李刚/李志斌/史建军/王世敏",
+            "dispose": "回线",
+            "Remark": "Thermal Shock-->B/I 168Hrs-->EMI-->Acoustic(新增）"
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 7,
+        "fields": {
+            "test_item": "Google _All",
+            "test_time": "192",
+            "test_owner": "李志斌/王世敏/李刚",
+            "dispose": "报废",
+            "Remark": "样品需保留一年才可以报废."
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 8,
+        "fields": {
+            "test_item": "Google_Burn In Test (By Day)",
+            "test_time": "192",
+            "test_owner": "李刚",
+            "dispose": "报废",
+            "Remark": "样品需保留一年才可以报废."
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 9,
+        "fields": {
+            "test_item": "Google_Tumble/Drop Test (By Day)",
+            "test_time": "24",
+            "test_owner": "王世敏",
+            "dispose": "报废",
+            "Remark": "样品需保留一年才可以报废."
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 10,
+        "fields": {
+            "test_item": "Google_BI,Drop,Tumble Test (By Day)",
+            "test_time": "168",
+            "test_owner": "王世敏",
+            "dispose": "报废",
+            "Remark": "样品需保留一年才可以报废."
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 11,
+        "fields": {
+            "test_item": "Google_EMI/ESD Test (By MO)",
+            "test_time": "96",
+            "test_owner": "刘唐英",
+            "dispose": "报废",
+            "Remark": "样品需保留一年才可以报废."
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 12,
+        "fields": {
+            "test_item": "Google_BI,Drop,Tumble,EMC Test (By MO&Day)",
+            "test_time": "168",
+            "test_owner": "王世敏/刘唐英",
+            "dispose": "报废",
+            "Remark": "样品需保留一年才可以报废."
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 13,
+        "fields": {
+            "test_item": "ATE",
+            "test_time": "16.0 ",
+            "test_owner": "陈建明",
+            "dispose": "回线",
+            "Remark": "Adapter\nPC,Server,Open frame"
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 14,
+        "fields": {
+            "test_item": "EMC&Dell ORT Test",
+            "test_time": "696",
+            "test_owner": "李刚/刘唐英/史建军/余军平/李志斌",
+            "dispose": "回线",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 15,
+        "fields": {
+            "test_item": "Ball Impact Test",
+            "test_time": "1.25",
+            "test_owner": "王世敏",
+            "dispose": "报废",
+            "Remark": "以测试5台为基础计算,每台测试时间为0.25小时."
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 16,
+        "fields": {
+            "test_item": "Bench Test",
+            "test_time": "4.0 ",
+            "test_owner": "陈建明",
+            "dispose": "报废",
+            "Remark": "Adapter\nPC,Server,Open frame"
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 17,
+        "fields": {
+            "test_item": "Burn In Test",
+            "test_time": "168",
+            "test_owner": "李刚",
+            "dispose": "回线",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 18,
+        "fields": {
+            "test_item": "Conducted EMI Measurement",
+            "test_time": "2.5",
+            "test_owner": "李志斌",
+            "dispose": "回线",
+            "Remark": "以测试5台为基础计算,每台测试时间为 0.5小时."
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 19,
+        "fields": {
+            "test_item": "DMTBF Test",
+            "test_time": "1440",
+            "test_owner": "李刚",
+            "dispose": "报废",
+            "Remark": "初步以2个月60天为基础,实际以计算为准."
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 20,
+        "fields": {
+            "test_item": "Drop Test",
+            "test_time": "1.25",
+            "test_owner": "王世敏",
+            "dispose": "报废",
+            "Remark": "以测试5台为基础计算,每台测试时间为0.25小时."
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 21,
+        "fields": {
+            "test_item": "Electrical Fast Transient / Burst Immunity Test",
+            "test_time": "2.5",
+            "test_owner": "李志斌",
+            "dispose": "报废",
+            "Remark": "以测试5台为基础计算,每台测试时间为 0.5小时."
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 22,
+        "fields": {
+            "test_item": "ESD Test",
+            "test_time": "10",
+            "test_owner": "李志斌",
+            "dispose": "报废",
+            "Remark": "以测试5台为基础计算,每台测试时间为2小时."
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 23,
+        "fields": {
+            "test_item": "HALT Test",
+            "test_time": "168",
+            "test_owner": "余军平",
+            "dispose": "报废",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 24,
+        "fields": {
+            "test_item": "Harmonic",
+            "test_time": "2.0 ",
+            "test_owner": "李志斌",
+            "dispose": "回线",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 25,
+        "fields": {
+            "test_item": "HASA",
+            "test_time": "4.0 ",
+            "test_owner": "余军平",
+            "dispose": "回线",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 26,
+        "fields": {
+            "test_item": "ION Test",
+            "test_time": "3.0 ",
+            "test_owner": "刘唐英",
+            "dispose": "报废",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 27,
+        "fields": {
+            "test_item": "Microsection Analysis",
+            "test_time": "4.0 ",
+            "test_owner": "李志斌/刘唐英",
+            "dispose": "报废",
+            "Remark": "Adapter\nPC,Server,Open frame"
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 28,
+        "fields": {
+            "test_item": "Non-Operational Temperature and Humidity Test",
+            "test_time": "72",
+            "test_owner": "余军平",
+            "dispose": "报废",
+            "Remark": ":For Adapter\n:For PC,Server,Open frame"
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 29,
+        "fields": {
+            "test_item": "ORT Rel Test For MP Stage",
+            "test_time": "216",
+            "test_owner": "史建军/李志斌/李刚",
+            "dispose": "报废",
+            "Remark": "试验顺序: Conducted EMI->Thermal Shock->B/I->Drop&Ball (For Adapter)"
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 30,
+        "fields": {
+            "test_item": "ORT Rel Test For NPI Stage",
+            "test_time": "504",
+            "test_owner": "李志斌/余军平/刘唐英/李刚/史建军/王世敏",
+            "dispose": "报废",
+            "Remark": "试验顺序:非破坏->破坏性\nAdapter,PC,Server,Open frame"
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 31,
+        "fields": {
+            "test_item": "PLD Test",
+            "test_time": "1.0 ",
+            "test_owner": "刘唐英",
+            "dispose": "报废",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 32,
+        "fields": {
+            "test_item": "POS Test",
+            "test_time": "40.0 ",
+            "test_owner": "余军平",
+            "dispose": "报废",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 33,
+        "fields": {
+            "test_item": "Power and Temperature Cycling (PTC) Test",
+            "test_time": "50",
+            "test_owner": "余军平",
+            "dispose": "报废",
+            "Remark": "Adapter\nPC,Server,Open frame"
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 34,
+        "fields": {
+            "test_item": "Strain Gage Test",
+            "test_time": "4",
+            "test_owner": "余军平",
+            "dispose": "报废",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 35,
+        "fields": {
+            "test_item": "Stress Analysis Test",
+            "test_time": "96",
+            "test_owner": "陈建明",
+            "dispose": "报废",
+            "Remark": "Adapter\nPC,Server,Open frame"
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 36,
+        "fields": {
+            "test_item": "Surface Temperature Test",
+            "test_time": "4",
+            "test_owner": "刘唐英",
+            "dispose": "报废",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 37,
+        "fields": {
+            "test_item": "Surge Immunity Test",
+            "test_time": "20",
+            "test_owner": "刘唐英",
+            "dispose": "报废",
+            "Remark": "以测试5台为基础计算,每台测试时间为 4小时."
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 38,
+        "fields": {
+            "test_item": "Taber Linear Abrasion",
+            "test_time": "1.0 ",
+            "test_owner": "王世敏",
+            "dispose": "报废",
+            "Remark": "以测试5台为基础计算,每台测试时间为12分钟."
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 39,
+        "fields": {
+            "test_item": "Thermal Shock Test",
+            "test_time": "11",
+            "test_owner": "史建军",
+            "dispose": "回线",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 40,
+        "fields": {
+            "test_item": "Thermal Test",
+            "test_time": "8",
+            "test_owner": "刘唐英",
+            "dispose": "报废",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 41,
+        "fields": {
+            "test_item": "Tumble Test",
+            "test_time": "1.0 ",
+            "test_owner": "王世敏",
+            "dispose": "报废",
+            "Remark": "以测试5台为基础计算,每台测试时间为12分钟."
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 42,
+        "fields": {
+            "test_item": "TCH_EMI,表面温升,Drop,Ball Test (By MO)",
+            "test_time": "48.0 ",
+            "test_owner": "王世敏/刘唐英",
+            "dispose": "报废",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 43,
+        "fields": {
+            "test_item": "Vibration Test",
+            "test_time": "3.5",
+            "test_owner": "余军平",
+            "dispose": "报废",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 44,
+        "fields": {
+            "test_item": "Packing Vibration Test",
+            "test_time": "3.5",
+            "test_owner": "余军平",
+            "dispose": "回线",
+            "Remark": "公路卡车频谱(1.5小时)→目视检查→空运频谱(1.5小时)→目视检查/功能检查。"
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 45,
+        "fields": {
+            "test_item": "熔融指数",
+            "test_time": "5",
+            "test_owner": "李志斌/刘唐英",
+            "dispose": "报废",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 46,
+        "fields": {
+            "test_item": "海康威视All ORT Test (By季度&By月)",
+            "test_time": "696",
+            "test_owner": "李刚/史建军/余军平/刘唐英",
+            "dispose": "报废",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 47,
+        "fields": {
+            "test_item": "海康威视B/I 168Hrs Test (By月)",
+            "test_time": "168",
+            "test_owner": "李刚",
+            "dispose": "回线",
+            "Remark": ""
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 48,
+        "fields": {
+            "test_item": "Connector Cycling Test",
+            "test_time": "15",
+            "test_owner": "王世敏",
+            "dispose": "报废",
+            "Remark": "以测试5台为基础计算,每台测试时间为 3小时."
+        }
+    },
+    {
+        "model": "plans.ttestitem",
+        "pk": 49,
+        "fields": {
+            "test_item": "Cross Section Analysis",
+            "test_time": "2.5",
+            "test_owner": "李志斌/刘唐英",
+            "dispose": "报废",
+            "Remark": "Adapter,PC,Server,Open frame"
+        }
+    }
+]

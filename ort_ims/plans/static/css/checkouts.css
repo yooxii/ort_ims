@@ -1,0 +1,121 @@
+.flashes {
+    position: fixed;
+    top: 20%;
+    left: calc(50vw - 20rem);
+}
+
+.flashes li {
+    list-style: none;
+}
+.vcenter {
+    position: absolute;
+    top: 50%;
+}
+
+.peek {
+    grid-column: 1 / 3;
+    background-color: #f2f2f2;
+    width: 100%;
+    max-width: calc(100vw - 130px);
+    min-height: 100vh;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    overflow: auto;
+}
+.peek td {
+    align-items: center;
+    text-align: center;
+}
+.peek input,
+.peek select {
+    font-family: "Times New Roman", Times, serif;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ddd;
+}
+.peek input[type="text"] {
+    color: #000;
+}
+.peek textarea {
+    align-items: center;
+    height: 48px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ddd;
+}
+
+.check_btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.check_btn:hover {
+    background-color: #3e8e41;
+}
+
+.check_btn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(2px);
+    transition: transform 0.3s;
+}
+
+.del_hide {
+    display: none;
+}
+
+.del_show {
+    display: block;
+}
+
+.w30 {
+    width: 50px;
+}
+
+.w100 {
+    width: 120px;
+}
+.w150 {
+    width: 180px;
+}
+
+.peek th{
+    align-items: center;
+    text-align: center;
+}
+
+.peek span {
+    display: inline-block;
+    margin: auto;
+}
+
+.arr {
+    display: inline-block;
+    width: 12px;
+}
+
+.arrUp {
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-bottom-color: #ccc;
+    cursor: pointer;
+}
+
+.arrDown {
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-top-color: #ccc;
+    margin-top: 6px;
+    cursor: pointer;
+}

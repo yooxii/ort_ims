@@ -1,0 +1,165 @@
+/* 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #211e1e;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #000000;
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: xx-large;
+    color: white;
+}
+nav {
+    position: sticky;
+    height: fit-content;
+    width: 90px;
+    top: 0;
+    display: block;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: auto;
+    background-color: #333;
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin-top: 10px;
+}
+
+nav div,
+nav a {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    text-decoration: none;
+    color: #588fbc;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav div {
+    display: flex;
+    height: fit-content;
+}
+
+nav a {
+    display: none;
+    height: 10%;
+    width: 90%;
+    padding: 5%;
+}
+
+nav a.head,
+nav div.active a.show,
+nav div.active i.icon-arrow {
+    display: flex;
+}
+
+nav div a.show {
+    margin-top: 5px;
+}
+
+nav a:hover {
+    background-color: #dec5c5;
+    box-shadow: #5ce9ff 0 0 5px;
+    color: #073b5a;
+}
+
+nav div a.head {
+    border-radius: 0;
+    background-color: #272727;
+}
+
+nav div.active a.head {
+    border-radius: 0;
+    background-color: #333;
+    box-shadow: black 0 4px 5px;
+}
+
+nav a.active {
+    color: #073b5a;
+    background-color: #dec5c5;
+    box-shadow: #5ce9ff 0 0 10px;
+    border-radius: 0;
+}
+
+nav span {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #0c99af;
+}
+
+main {
+    position: relative;
+    display: grid;
+    grid-template-columns: 100px 100%;
+    height: fit-content;
+    width: calc(100vw - 15px);
+    padding: 0;
+    background-color: #ebe2e2;
+}
+
+.container_content {
+    grid-column: 2/2;
+    display: grid;
+    grid-template-columns: max-content auto auto max-content;
+    grid-template-rows: max-content max-content;
+    width: 100%;
+    height: fit-content;
+    top: 0;
+    left: 95px;
+    max-width: calc(100vw - 110px);
+    background-color: #ebe2e2;
+    padding: 20px;
+}
+
+.shadow {
+    box-shadow: #778688 0 0 10px;
+}
+
+h2 {
+    color: #000000;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #000000;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+*/
+
+nav img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: block;
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
+}

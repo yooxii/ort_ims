@@ -1,0 +1,73 @@
+{% extends "ortplans/ort_base.html" %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+<style>
+    #testitems-menu,
+    #testitems-th-menu {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        min-width: 120px;
+        z-index: 1;
+    }
+</style>
+
+<div>
+    <div class="table-responsive m-2 p-2">
+        <h3>{{ title }}</h3>
+        <table class="table table-hover table-striped table-bordered table-sm" id="testitems_table" name="testitem_peek">
+            <thead class="thead-dark">
+                <tr>
+                    <th> <span>项次</span> </th>
+                    <th> <span>测试项目</span> </th>
+                    <th> <span>测试时间(h)</span> </th>
+                    <th> <span>测试负责人</span> </th>
+                    <th> <span>样品处理</span> </th>
+                    <th> <span>备注</span> </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for obj in all_testitems %}
+                <tr data-testitem-id="{{ obj.id }}">
+                    <td> {{ obj.id }} </td>
+                    <td> {{ obj.test_item }} </td>
+                    <td> {{ obj.test_time }} </td>
+                    <td> {{ obj.test_owner }} </td>
+                    <td> {{ obj.dispose }} </td>
+                    <td> {{ obj.Remark }} </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="11" class="text-center">暂无数据，请先添加</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="list-group" id="testitems-menu">
+    <a class="list-group-item list-group-item-action" href="">添加</a>
+    <a class="list-group-item list-group-item-action" href="" id="edittestitem">编辑</a>
+    <a class="list-group-item list-group-item-action" href="" id="deltestitem">删除</a>
+</div>
+
+<div class="list-group" id="testitems-th-menu">
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="list-group-item list-group-item-action" formaction="">添加</button>
+    </form>
+</div>
+
+<script>
+
+</script>
+{% endblock content %}

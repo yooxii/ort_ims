@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<meta charset="UTF-8" />
+<title>{% block title %}首页{% endblock title %}</title>
+
+<head>
+    <title>ORT报告工作站</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap4.6.2/css/bootstrap.css' %}" />
+    <!-- <link rel="stylesheet" href="{% static 'css/lazy.css' %}" /> -->
+    <!-- <link rel="stylesheet" href="{% static 'css/index.css' %}" /> -->
+    <script src="{% static 'plugins/jQuery/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap4.6.2/js/bootstrap.bundle.min.js' %}"></script>
+    <style>
+        nav img {
+            width: 16px;
+            height: 16px;
+        }
+    </style>
+</head>
+
+<body class="container-fluid">
+    <main class="mb-5">
+        <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <img style="width: 35px; height: 25px;" src="{% static 'img/acbel.png' %}" alt="首页" />
+                    <li class="nav-item">
+                        <a class="nav-link text-center" href="{% url 'plans:index' %}">首页</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false"><span>计划</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'plans:checkouts' %}"><img src="{% static 'img/icon/icn_wuzilingtuiliaochaxun.svg' %}"
+                                  alt="领用" /><span>领用</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'plans:schedules' %}"><img src="{% static 'img/icon/paicheng.svg' %}" alt="排程" /><span>排程</span></a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false"><span>报告</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/"><img src="{% static 'img/icon/amz.svg' %}" alt="AMZ" /><span>AMZ</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href=""><img src="{% static 'img/icon/a-mxburn.svg' %}" alt="EMI@168" /><span>EMI&amp;168</span></a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false"><span>管理</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'plans:custproducts' %}"><span>客户&amp;产品</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'plans:testitems' %}"><span>测试项目</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{%url 'plans:technicians' %}"><span>测试人员</span></a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=""><img src="{% static 'img/icon/sousuo_1.svg' %}" alt="审查" /><span>审查</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=""><img src="{% static 'img/icon/fankui_1.svg' %}" alt="反馈" /><span>反馈</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=""><img src="{% static 'img/icon/bangzhu_3.svg' %}" alt="帮助" /><span>帮助</span></a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <!-- <header>
+            {% block header %}
+            <h1>ORT报告工作站</h1>
+            <div>
+                <p>ORT报告工作站，为您提供报告、审查、反馈等服务。</p>
+            </div>
+            {% endblock header %}
+        </header> -->
+        <div class="container_content" id="container">
+            {% block content %} {% endblock content %}
+            {% block right_peek %} {% endblock right_peek %}
+        </div>
+    </main>
+    <footer class="d-block justify-content-center fixed-bottom bg-light text-center">
+        <p>版权所有 © 2025 ORT报告工作站</p>
+    </footer>
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+
+</html>

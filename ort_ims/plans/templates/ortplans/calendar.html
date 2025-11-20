@@ -1,0 +1,27 @@
+{% load static %}
+<div class="cal-container">
+    <link rel="stylesheet" href="{% static 'css/cal.css' %}" />
+    <div class="year-month">
+        <div>
+            <span id="month"></span>
+            <span id="year"></span>
+        </div>
+        <div class="pre" id="pre-month">&lt;</div>
+        <div class="next" id="next-month">&gt;</div>
+    </div>
+    <div class="weeks">
+        <ul>
+            <li>日</li>
+            <li>一</li>
+            <li>二</li>
+            <li>三</li>
+            <li>四</li>
+            <li>五</li>
+            <li>六</li>
+        </ul>
+    </div>
+    <div class="days">
+        <ul id="day"></ul>
+    </div>
+    <script src="{% static 'js/cal.js' %}"></script>
+</div>

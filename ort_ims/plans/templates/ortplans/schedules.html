@@ -1,0 +1,137 @@
+{% extends "ortplans/ort_base.html" %}
+
+{% block header %}{% load static %}<h1>{% block title %}排程管理{% endblock title %}</h1>{% endblock header %}
+
+{% block content %}
+<style>
+    #rclick-menu,
+    #rclick-th-menu {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        min-width: 120px;
+        z-index: 1;
+    }
+    
+    /* 添加长内容处理样式 */
+    .content-ellipsis {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px;
+    }
+</style>
+<!-- 引入新的CSS文件 -->
+<link rel="stylesheet" href="{% static 'css/resizable-table.css' %}">
+<script src="{% static 'js/datas_table.js' %}"></script>
+<script src="{% static 'js/resizable-table.js' %}"></script>
+<div class="peek">
+    <h3>排程管理</h3>
+    {% if not schedules_edit_btns %}
+    <form method="post" action="{% url 'plans:import_schedules' %}" enctype="multipart/form-data" id="uploadForm">
+        <div class="input-group mb-3 w-50">
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" type="submit" id="uploadBtn">导入</button>
+            </div>
+            <a href="{% url 'plans:export_schedules' %}" class="btn btn-outline-primary" title="导出到Excel文件">导出</a>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="fileInput">
+                <label class="custom-file-label" for="fileInput">选择文件</label>
+            </div>
+        </div>
+    </form>
+    {% endif %}
+    <div class="table-responsive">
+        <table class="table table-hover table-striped table-bordered table-sm" id="datas_table">
+            <thead class="thead-dark">
+                <tr>
+                    <!-- <th> <span>NO.</span> </th> -->
+                    <th> <span>工作编号</span> </th>
+                    <th> <span>送测</span> </th>
+                    <th> <span>产品别</span> </th>
+                    <th> <span>客户别</span> </th>
+                    <th> <span>机种名</span> </th>
+                    <th> <span>阶段</span> </th>
+                    <th> <span>测试项目</span> </th>
+                    <th> <span>样品数</span> </th>
+                    <th> <span>实验时间(h)</span> </th>
+                    <th> <span>负责人</span> </th>
+                    <th> <span>开始日期</span> </th>
+                    <th> <span>结束日期</span> </th>
+                    <th> <span>完成状况</span> </th>
+                    <th> <span>上传系统</span> </th>
+                    <th> <span>工令</span> </th>
+                    <th> <span>备注</span> </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for schedule in object_list %}
+                <tr data-schedule-id="{{ schedule.id }}">
+                    <td class="content-ellipsis"> {{ schedule.JobNo }} </td>
+                    <td> {{ schedule.get_QRT_display }} </td>
+                    <td> {{ schedule.Product.product_type }} </td>
+                    <td> {{ schedule.Customer.cust_name }} </td>
+                    <td class="content-ellipsis"> {{ schedule.PartNo }} </td>
+                    <td> {{ schedule.get_Stage_display }} </td>
+                    <td class="content-ellipsis"> {{ schedule.TestItem }} </td>
+                    <td> {{ schedule.SampleSize }} </td>
+                    <td> {{ schedule.TestPeriod }} </td>
+                    <td class="content-ellipsis"> {{ schedule.Owner }} </td>
+                    <td> {{ schedule.StartDate|date:"Y/m/d" }} </td>
+                    <td> {{ schedule.EndDate|date:"Y/m/d" }} </td>
+                    <td> {{ schedule.get_Status_display }} </td>
+                    <td> {{ schedule.get_Upload_Elab_display }} </td>
+                    <td class="content-ellipsis"> {{ schedule.Work_Order }} </td>
+                    <td class="content-ellipsis"> {{ schedule.Remark }} </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="11" class="text-center">暂无数据，请先添加</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="list-group" id="rclick-menu">
+    <a class="list-group-item list-group-item-action" href="{% url 'plans:add_schedules' pk=0 %}">添加</a>
+    <a class="list-group-item list-group-item-action" href="{% url 'plans:edit_schedules' pk=1 %}" id="edit_data">编辑</a>
+    <a class="list-group-item list-group-item-action" href="{% url 'plans:delete_schedules' pk=1 %}" id="delete_data">删除</a>
+</div>
+
+<div class="list-group" id="rclick-th-menu">
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="list-group-item list-group-item-action" formaction="{% url 'plans:add_schedules' pk=0 %}">添加</button>
+    </form>
+</div>
+
+<script>
+    $(document).ready(function() {
+        // 初始化表格列可拖拽调整宽度
+        $("#datas_table").resizableTable();
+    });
+    
+    $(document).on("contextmenu", "#datas_table tbody tr", function (event) {
+        event.preventDefault();
+
+        // 获取当前行的ID
+        const row_id = $(this).data('schedule-id');
+        console.log(row_id);
+
+        hideMenu();
+
+        $("#edit_data").attr("href", "{% url 'plans:edit_schedules' pk=1 %}".replace('1', row_id));
+        $("#delete_data").attr("href", "{% url 'plans:delete_schedules' pk=1 %}".replace('1', row_id));
+
+        // 在鼠标点击的位置显示自定义右键菜单
+        $("#rclick-menu").css({
+            top: event.clientY,
+            left: event.clientX
+        }).show();
+    });
+</script>
+{% endblock content %}

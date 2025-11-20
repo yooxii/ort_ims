@@ -1,0 +1,135 @@
+{% extends "ortplans/ort_base.html" %}
+{% load static %}
+{% load ORTplans_extras %}
+
+{% block header %}<h1>{% block title %}领用{% endblock title %}</h1>{% endblock header %}
+
+{% block content %}
+<style>
+    #rclick-menu,
+    #rclick-th-menu {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        min-width: 120px;
+        z-index: 1;
+    }
+    
+    /* 添加长内容处理样式 */
+    .content-ellipsis {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px;
+    }
+</style>
+<!-- 引入新的CSS文件 -->
+<link rel="stylesheet" href="{% static 'css/resizable-table.css' %}">
+<script src="{% static 'js/datas_table.js' %}"></script>
+<script src="{% static 'js/resizable-table.js' %}"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/ui-lightness/jquery-ui.css">
+<div class="peek">
+    <h3>领用信息</h3>
+    {% if not checkouts_edit_btns %}
+    <form method="post" action="{% url 'plans:import_checkouts' %}" enctype="multipart/form-data" id="uploadForm">
+        <div class="input-group mb-3 w-50">
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" type="submit" id="uploadBtn">导入</button>
+            </div>
+            <a href="{% url 'plans:export_checkouts' %}" class="btn btn-outline-primary" title="导出到Excel文件">导出</a>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="fileInput">
+                <label class="custom-file-label" for="fileInput">选择文件</label>
+            </div>
+        </div>
+    </form>
+    {% endif %}
+    {% block checkouts_edit_btns %} {% endblock checkouts_edit_btns %}
+    <div class="table-responsive">
+        <table class="table table-hover table-striped table-bordered table-sm" id="datas_table">
+            <thead class="thead-dark">
+                <tr>
+                    <!-- <th> <span>NO.</span> </th> -->
+                    <th> <span class="text-nowrap">领用单号</span> </th>
+                    <th> <span class="text-nowrap">领用日期</span> </th>
+                    <th> <span class="text-nowrap">机种名称</span> </th>
+                    <th> <span class="text-nowrap">数量</span> </th>
+                    <th> <span class="text-nowrap">序列号</span> </th>
+                    <th> <span class="text-nowrap">周期</span> </th>
+                    <th> <span class="text-nowrap">版本</span> </th>
+                    <th> <span class="text-nowrap">工令</span> </th>
+                    <th> <span class="text-nowrap">领出状态</span> </th>
+                    <th> <span class="text-nowrap">备注</span> </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for checkout in object_list %}
+                <tr data-checkout-id="{{ checkout.id }}">
+                    {% block checkouts_edit_checkbox_input %} {% endblock checkouts_edit_checkbox_input %}
+                    <!-- <td class="text-center align-middle"> {{ checkout.id }} </td> -->
+                    <td class="align-middle"> {{ checkout.checkout_no }} </td>
+                    <td class="align-middle text-nowrap"> {{ checkout.checkout_date|date:"Y/m/d" }} </td>
+                    <td class="align-middle"> {{ checkout.PartNo }} </td>
+                    <td class="align-middle"> {{ checkout.checkout_qty }} </td>
+                    <td class="align-middle content-ellipsis"> {% if checkout.sn_file %}<a href="{{ checkout.sn_file.url }}"
+                          target="_blank">{{checkout.sn_file.name|basename}}</a>{% else %}{{ checkout.SN|escape|linebreaksbr }}{% endif %} </td>
+                    <td class="align-middle"> {{ checkout.DC }} </td>
+                    <td class="align-middle"> {{ checkout.REV }} </td>
+                    <td class="align-middle text-nowrap"> {{ checkout.Work_Order }} </td>
+                    <td class="align-middle"> {{ checkout.get_checkout_status_display }} </td>
+                    <td class="align-middle content-ellipsis"> {{ checkout.Remarks }} </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="11" class="text-center">暂无数据，请先添加</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% block checkouts_edit_script %} {% endblock checkouts_edit_script %}
+
+<div class="list-group" id="rclick-menu">
+    <a class="list-group-item list-group-item-action" href="{% url 'plans:add_checkouts' %}">添加</a>
+    <a class="list-group-item list-group-item-action" href="{% url 'plans:edit_checkouts' pk=1 %}" id="edit_data">编辑</a>
+    <a class="list-group-item list-group-item-action" href="{% url 'plans:delete_checkouts' pk=1 %}" id="delete_data">删除</a>
+</div>
+
+<div class="list-group" id="rclick-th-menu">
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="list-group-item list-group-item-action" formaction="{% url 'plans:add_checkouts' %}">添加</button>
+    </form>
+</div>
+
+<script>
+    $(document).ready(function() {
+        // 初始化表格列可拖拽调整宽度
+        $("#datas_table").resizableTable();
+    });
+    
+    $(document).on("contextmenu", "#datas_table tbody tr", function (event) {
+        event.preventDefault();
+
+        // 获取当前行的ID
+        const row_id = $(this).data('checkout-id');
+        console.log(row_id);
+
+        hideMenu();
+
+        $("#edit_data").attr("href", "{% url 'plans:edit_checkouts' pk=1 %}".replace('1', row_id));
+        $("#delete_data").attr("href", "{% url 'plans:delete_checkouts' pk=1 %}".replace('1', row_id));
+
+        // 在鼠标点击的位置显示自定义右键菜单
+        $("#rclick-menu").css({
+            top: event.clientY,
+            left: event.clientX
+        }).show();
+    });
+</script>
+{% endblock content %}

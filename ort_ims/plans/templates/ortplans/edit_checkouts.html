@@ -1,0 +1,66 @@
+{% extends "ortplans/ort_base.html" %}
+
+{% block header %}{% load static %}<h1>{% block title %}领用编辑{% endblock title %}</h1>{% endblock header %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-row">
+        {% for field in form %}
+        <div class="form-group col-md-4">
+            {{ field.label }}{{ field }}
+            {% if error %}
+            <span class="text-danger">{{ field.errors.0 }}</span>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    <!-- <div class="form-group col-md-3" hidden>
+            <label for="checkout_id">NO.</label>
+            <input type="text" class="form-control" name="checkout_id" value="{{ checkout.id }}">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="checkout_no">领用单号</label>
+            <input type="text" class="form-control" name="checkout_no" value="{{ checkout.checkout_no }}">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="PartNo">机种名称</label>
+            <input type="text" class="form-control" name="PartNo" value="{{ checkout.PartNo }}">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="checkout_date">日期</label>
+            <input type="date" class="form-control" name="checkout_date" value="{{ checkout.checkout_date }}">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="DC">周期</label>
+            <input type="text" class="form-control" name="DC" value="{{ checkout.DC }}">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="checkout_qty">数量</label>
+            <input type="text" class="form-control" name="checkout_qty" value="{{ checkout.checkout_qty }}">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="REV">版本</label>
+            <input type="text" class="form-control" name="REV" value="{{ checkout.REV }}">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="Work_Order">工令</label>
+            <input type="text" class="form-control" name="Work_Order" value="{{ checkout.Work_Order }}">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="TestItem">测试项目</label>
+            <input type="text" class="form-control" name="TestItem" value="{{ checkout.TestItem }}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="SN">序列号</label>
+        <textarea class="form-control" name="SN" placeholder="序列号">{{ checkout.SN }}</textarea>
+    </div>
+    <div class="form-group">
+        <label for="Remarks">备注</label>
+        <textarea class="form-control" name="Remarks" placeholder="备注">{{ checkout.Remarks }}</textarea>
+    </div> -->
+    <a href="{% url 'plans:checkouts' %}" class="btn btn-primary">取消</a>
+    <button type="submit" class="btn btn-primary">保存</button>
+</form>
+{% endblock content %}

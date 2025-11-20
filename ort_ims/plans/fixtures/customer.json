@@ -1,0 +1,730 @@
+[
+    {
+        "model": "plans.tcustcode",
+        "pk": 1,
+        "fields": {
+            "cust_code": "00",
+            "cust_name": "STANDARD"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 2,
+        "fields": {
+            "cust_code": "02",
+            "cust_name": "HP"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 3,
+        "fields": {
+            "cust_code": "03",
+            "cust_name": "IBM"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 4,
+        "fields": {
+            "cust_code": "07",
+            "cust_name": "WISTRON"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 5,
+        "fields": {
+            "cust_code": "0A",
+            "cust_name": "杭州協能科技"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 6,
+        "fields": {
+            "cust_code": "0R",
+            "cust_name": "LITEON"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 7,
+        "fields": {
+            "cust_code": "11",
+            "cust_name": "NCR"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 8,
+        "fields": {
+            "cust_code": "13",
+            "cust_name": "POWER"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 9,
+        "fields": {
+            "cust_code": "14",
+            "cust_name": "ACER"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 10,
+        "fields": {
+            "cust_code": "18",
+            "cust_name": "MITAC"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 11,
+        "fields": {
+            "cust_code": "19",
+            "cust_name": "HITACHI"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 12,
+        "fields": {
+            "cust_code": "1X",
+            "cust_name": "ADB"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 13,
+        "fields": {
+            "cust_code": "20",
+            "cust_name": "FUJITSU"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 14,
+        "fields": {
+            "cust_code": "22",
+            "cust_name": "NEC"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 15,
+        "fields": {
+            "cust_code": "23",
+            "cust_name": "FLYTEC"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 16,
+        "fields": {
+            "cust_code": "24",
+            "cust_name": "DELL"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 17,
+        "fields": {
+            "cust_code": "26",
+            "cust_name": "PHILIPS"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 18,
+        "fields": {
+            "cust_code": "28",
+            "cust_name": "DIEBOLD"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 19,
+        "fields": {
+            "cust_code": "29",
+            "cust_name": "APPLE"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 20,
+        "fields": {
+            "cust_code": "2A",
+            "cust_name": "MOTOTECH"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 21,
+        "fields": {
+            "cust_code": "2X",
+            "cust_name": "CALCOMP"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 22,
+        "fields": {
+            "cust_code": "33",
+            "cust_name": "DOT  HILL"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 23,
+        "fields": {
+            "cust_code": "38",
+            "cust_name": "COMPAL"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 24,
+        "fields": {
+            "cust_code": "3S",
+            "cust_name": "MSI"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 25,
+        "fields": {
+            "cust_code": "40",
+            "cust_name": "LG"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 26,
+        "fields": {
+            "cust_code": "4B",
+            "cust_name": "SUPERMICRO"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 27,
+        "fields": {
+            "cust_code": "4C",
+            "cust_name": "JUNIPER"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 28,
+        "fields": {
+            "cust_code": "4N",
+            "cust_name": "PLC"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 29,
+        "fields": {
+            "cust_code": "4Q",
+            "cust_name": "AIC"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 30,
+        "fields": {
+            "cust_code": "4Z",
+            "cust_name": "ZT"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 31,
+        "fields": {
+            "cust_code": "5B",
+            "cust_name": "BE"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 32,
+        "fields": {
+            "cust_code": "5K",
+            "cust_name": "FIC"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 33,
+        "fields": {
+            "cust_code": "60",
+            "cust_name": "INVENTEC"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 34,
+        "fields": {
+            "cust_code": "61",
+            "cust_name": "JOYTECH"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 35,
+        "fields": {
+            "cust_code": "62",
+            "cust_name": "CANON"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 36,
+        "fields": {
+            "cust_code": "66",
+            "cust_name": "SCHNEIDER"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 37,
+        "fields": {
+            "cust_code": "6J",
+            "cust_name": "AMWAY"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 38,
+        "fields": {
+            "cust_code": "6P",
+            "cust_name": "CORNING"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 39,
+        "fields": {
+            "cust_code": "71",
+            "cust_name": "EMC&DELL"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 40,
+        "fields": {
+            "cust_code": "73",
+            "cust_name": "NOKIA"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 41,
+        "fields": {
+            "cust_code": "79",
+            "cust_name": "CISCO"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 42,
+        "fields": {
+            "cust_code": "7F",
+            "cust_name": "QSAN"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 43,
+        "fields": {
+            "cust_code": "7K",
+            "cust_name": "迎廣"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 44,
+        "fields": {
+            "cust_code": "7L",
+            "cust_name": "曙光"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 45,
+        "fields": {
+            "cust_code": "7N",
+            "cust_name": "永大機電"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 46,
+        "fields": {
+            "cust_code": "7V",
+            "cust_name": "INFOACTION"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 47,
+        "fields": {
+            "cust_code": "81",
+            "cust_name": "ERICSSON"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 48,
+        "fields": {
+            "cust_code": "88",
+            "cust_name": "SHARP"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 49,
+        "fields": {
+            "cust_code": "8H",
+            "cust_name": "NEWTECH"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 50,
+        "fields": {
+            "cust_code": "8K",
+            "cust_name": "GOOGLE"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 51,
+        "fields": {
+            "cust_code": "93",
+            "cust_name": "QUANTA"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 52,
+        "fields": {
+            "cust_code": "94",
+            "cust_name": "WAMCO"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 53,
+        "fields": {
+            "cust_code": "9N",
+            "cust_name": "GTECH"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 54,
+        "fields": {
+            "cust_code": "9T",
+            "cust_name": "海康威視"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 55,
+        "fields": {
+            "cust_code": "A1",
+            "cust_name": "TOSHIBA"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 56,
+        "fields": {
+            "cust_code": "A2",
+            "cust_name": "CELESTICA"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 57,
+        "fields": {
+            "cust_code": "AD",
+            "cust_name": "TECHNICOLOR"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 58,
+        "fields": {
+            "cust_code": "AF",
+            "cust_name": "中華電信"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 59,
+        "fields": {
+            "cust_code": "AN",
+            "cust_name": "NORTEL"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 60,
+        "fields": {
+            "cust_code": "AR",
+            "cust_name": "TOSHIBA"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 61,
+        "fields": {
+            "cust_code": "B9",
+            "cust_name": "DJI"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 62,
+        "fields": {
+            "cust_code": "BI",
+            "cust_name": "COMPUWARE"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 63,
+        "fields": {
+            "cust_code": "BK",
+            "cust_name": "ANDREW"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 64,
+        "fields": {
+            "cust_code": "BW",
+            "cust_name": "TIVO"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 65,
+        "fields": {
+            "cust_code": "C8",
+            "cust_name": "ARRIS"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 66,
+        "fields": {
+            "cust_code": "CD",
+            "cust_name": "MITEL"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 67,
+        "fields": {
+            "cust_code": "CH",
+            "cust_name": "GIGABYTE"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 68,
+        "fields": {
+            "cust_code": "CX",
+            "cust_name": "EPSON"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 69,
+        "fields": {
+            "cust_code": "D3",
+            "cust_name": "ARAS"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 70,
+        "fields": {
+            "cust_code": "D9",
+            "cust_name": "PACE"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 71,
+        "fields": {
+            "cust_code": "DF",
+            "cust_name": "COMTREND"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 72,
+        "fields": {
+            "cust_code": "DJ",
+            "cust_name": "LEA"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 73,
+        "fields": {
+            "cust_code": "E9",
+            "cust_name": "FLEXTRONICS"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 74,
+        "fields": {
+            "cust_code": "EL",
+            "cust_name": "LENOVO"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 75,
+        "fields": {
+            "cust_code": "F4",
+            "cust_name": "CLOUD"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 76,
+        "fields": {
+            "cust_code": "F9",
+            "cust_name": "AMZ"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 77,
+        "fields": {
+            "cust_code": "FB",
+            "cust_name": "CIENA"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 78,
+        "fields": {
+            "cust_code": "FH",
+            "cust_name": "ICON"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 79,
+        "fields": {
+            "cust_code": "FV",
+            "cust_name": "GOGORO"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 80,
+        "fields": {
+            "cust_code": "HF",
+            "cust_name": "CISCO"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 81,
+        "fields": {
+            "cust_code": "G0",
+            "cust_name": "GOOXI"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 82,
+        "fields": {
+            "cust_code": "G2",
+            "cust_name": "宸圓科技"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 83,
+        "fields": {
+            "cust_code": "G5",
+            "cust_name": "比特大陸"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 84,
+        "fields": {
+            "cust_code": "GA",
+            "cust_name": "DAHUA"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 85,
+        "fields": {
+            "cust_code": "GQ",
+            "cust_name": "HPE"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 86,
+        "fields": {
+            "cust_code": "WC",
+            "cust_name": "OPTEX"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 87,
+        "fields": {
+            "cust_code": "Y1",
+            "cust_name": "EILI"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 88,
+        "fields": {
+            "cust_code": "YD",
+            "cust_name": "DLH"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 89,
+        "fields": {
+            "cust_code": "YK",
+            "cust_name": "ANTEC"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 90,
+        "fields": {
+            "cust_code": "YT",
+            "cust_name": "TARGUS"
+        }
+    },
+    {
+        "model": "plans.tcustcode",
+        "pk": 91,
+        "fields": {
+            "cust_code": "ZA",
+            "cust_name": "ASUS"
+        }
+    }
+]

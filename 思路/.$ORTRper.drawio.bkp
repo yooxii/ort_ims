@@ -1,0 +1,25 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.8 Chrome/140.0.7339.240 Electron/38.4.0 Safari/537.36" version="28.2.8">
+  <diagram name="第 1 页" id="LLDe1Pv0y5iFXWRkVfJ7">
+    <mxGraphModel dx="946" dy="669" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="-ZSuza_S3VkkgyGm_muT-7" value="1" parent="0" />
+        <mxCell id="-ZSuza_S3VkkgyGm_muT-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="-ZSuza_S3VkkgyGm_muT-7" source="-ZSuza_S3VkkgyGm_muT-10" target="-ZSuza_S3VkkgyGm_muT-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZSuza_S3VkkgyGm_muT-9" value="复制" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="-ZSuza_S3VkkgyGm_muT-8">
+          <mxGeometry x="-0.375" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-ZSuza_S3VkkgyGm_muT-10" value="&lt;font&gt;用户上传&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;fillStyle=auto;glass=0;" vertex="1" parent="-ZSuza_S3VkkgyGm_muT-7">
+          <mxGeometry x="120" y="200" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZSuza_S3VkkgyGm_muT-11" value="&lt;font&gt;临时目录&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;fillStyle=auto;glass=0;" vertex="1" parent="-ZSuza_S3VkkgyGm_muT-7">
+          <mxGeometry x="280" y="200" width="80" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

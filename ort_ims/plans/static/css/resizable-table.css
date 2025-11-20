@@ -1,0 +1,84 @@
+/* 可调整列宽的表格样式 */
+.resizable-table {
+    table-layout: auto;
+    /* 改为auto以适应内容 */
+    width: 100%;
+}
+
+.resizable-table th,
+.resizable-table td {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /* 添加最小宽度以确保可读性 */
+    min-width: 50px;
+}
+
+/* 隐藏默认的拖拽标识 */
+.resizable-table th::after,
+.resizable-table td::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0px;
+    cursor: col-resize;
+    background: transparent;
+    z-index: 1;
+}
+
+/* 当鼠标悬停在可调整区域时显示拖拽效果 */
+.resizable-table th:hover::after,
+.resizable-table td:hover::after {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* 手动添加的拖拽手柄 */
+.resize-handle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 2px;
+    cursor: col-resize;
+    background: transparent;
+    z-index: 10;
+    /* 提高层级确保可见 */
+    pointer-events: auto;
+    /* 确保手柄响应鼠标事件 */
+}
+
+.resize-handle:hover {
+    background: #007bff;
+    opacity: 0.5;
+}
+
+/* 拖拽时的样式 */
+.resizing {
+    cursor: col-resize !important;
+    user-select: none;
+}
+
+/* 隐藏默认的表格边框，使外观更美观 */
+.resizable-table th,
+.resizable-table td {
+    border-right: 1px solid #dee2e6;
+    padding: 0.75rem;
+    /* 添加内边距提高可读性 */
+    position: relative;
+    /* 确保为绝对定位的子元素提供定位上下文 */
+}
+
+.resizable-table th:last-child,
+.resizable-table td:last-child {
+    border-right: none;
+}
+
+/* 特殊处理包含长内容的单元格 */
+.resizable-table .content-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

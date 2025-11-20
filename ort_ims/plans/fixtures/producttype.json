@@ -1,0 +1,194 @@
+[
+    {
+        "model": "plans.tproducttype",
+        "pk": 1,
+        "fields": {
+            "product_code": "AD",
+            "product_type": "Adapter"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 2,
+        "fields": {
+            "product_code": "PC",
+            "product_type": "Desk top"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 3,
+        "fields": {
+            "product_code": "FS",
+            "product_type": "Sever"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 4,
+        "fields": {
+            "product_code": "OT",
+            "product_type": "OP"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 5,
+        "fields": {
+            "product_code": "WA",
+            "product_type": "Charger"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 6,
+        "fields": {
+            "product_code": "WL",
+            "product_type": "LED"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 7,
+        "fields": {
+            "product_code": "VR",
+            "product_type": "VRM"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 8,
+        "fields": {
+            "product_code": "TC",
+            "product_type": "Sever"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 9,
+        "fields": {
+            "product_code": "ST",
+            "product_type": "OP"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 10,
+        "fields": {
+            "product_code": "SG",
+            "product_type": "Sever"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 11,
+        "fields": {
+            "product_code": "RT",
+            "product_type": "HSR"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 12,
+        "fields": {
+            "product_code": "PO",
+            "product_type": "Sever"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 13,
+        "fields": {
+            "product_code": "PB",
+            "product_type": "Sever"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 14,
+        "fields": {
+            "product_code": "LM",
+            "product_type": "LED"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 15,
+        "fields": {
+            "product_code": "NW",
+            "product_type": "Desk top"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 16,
+        "fields": {
+            "product_code": "LT",
+            "product_type": "OP"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 17,
+        "fields": {
+            "product_code": "LD",
+            "product_type": "OP"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 18,
+        "fields": {
+            "product_code": "HR",
+            "product_type": "HSR"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 19,
+        "fields": {
+            "product_code": "HB",
+            "product_type": "Desk top"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 20,
+        "fields": {
+            "product_code": "GE",
+            "product_type": "Sever"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 21,
+        "fields": {
+            "product_code": "FP",
+            "product_type": "Sever"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 22,
+        "fields": {
+            "product_code": "FL",
+            "product_type": "LED"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 23,
+        "fields": {
+            "product_code": "DC",
+            "product_type": "DC/DC"
+        }
+    },
+    {
+        "model": "plans.tproducttype",
+        "pk": 24,
+        "fields": {
+            "product_code": "AP",
+            "product_type": "Desk top"
+        }
+    }
+]
