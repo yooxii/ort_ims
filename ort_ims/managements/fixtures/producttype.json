@@ -1,6 +1,6 @@
 [
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 1,
         "fields": {
             "product_code": "AD",
@@ -8,7 +8,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 2,
         "fields": {
             "product_code": "PC",
@@ -16,7 +16,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 3,
         "fields": {
             "product_code": "FS",
@@ -24,7 +24,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 4,
         "fields": {
             "product_code": "OT",
@@ -32,7 +32,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 5,
         "fields": {
             "product_code": "WA",
@@ -40,7 +40,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 6,
         "fields": {
             "product_code": "WL",
@@ -48,7 +48,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 7,
         "fields": {
             "product_code": "VR",
@@ -56,7 +56,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 8,
         "fields": {
             "product_code": "TC",
@@ -64,7 +64,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 9,
         "fields": {
             "product_code": "ST",
@@ -72,7 +72,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 10,
         "fields": {
             "product_code": "SG",
@@ -80,7 +80,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 11,
         "fields": {
             "product_code": "RT",
@@ -88,7 +88,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 12,
         "fields": {
             "product_code": "PO",
@@ -96,7 +96,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 13,
         "fields": {
             "product_code": "PB",
@@ -104,7 +104,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 14,
         "fields": {
             "product_code": "LM",
@@ -112,7 +112,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 15,
         "fields": {
             "product_code": "NW",
@@ -120,7 +120,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 16,
         "fields": {
             "product_code": "LT",
@@ -128,7 +128,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 17,
         "fields": {
             "product_code": "LD",
@@ -136,7 +136,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 18,
         "fields": {
             "product_code": "HR",
@@ -144,7 +144,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 19,
         "fields": {
             "product_code": "HB",
@@ -152,7 +152,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 20,
         "fields": {
             "product_code": "GE",
@@ -160,7 +160,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 21,
         "fields": {
             "product_code": "FP",
@@ -168,7 +168,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 22,
         "fields": {
             "product_code": "FL",
@@ -176,7 +176,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 23,
         "fields": {
             "product_code": "DC",
@@ -184,7 +184,7 @@
         }
     },
     {
-        "model": "plans.tproducttype",
+        "model": "managements.tproducttype",
         "pk": 24,
         "fields": {
             "product_code": "AP",

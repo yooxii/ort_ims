@@ -23,6 +23,8 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
     path("plans/", include("ort_ims.plans.urls", namespace="plans")),
+    path("managements/", include("ort_ims.managements.urls", namespace="managements")),
+    path("reports/", include("ort_ims.ortreports.urls", namespace="ortreports")),
     # ...
     # Media files
     *static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),

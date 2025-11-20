@@ -1,4 +1,4 @@
-{% extends "ortplans/ort_base.html" %}
+{% extends "plans/ort_base.html" %}
 {% load static %}
 {% load ORTplans_extras %}
 
@@ -15,7 +15,7 @@
         min-width: 120px;
         z-index: 1;
     }
-    
+
     /* 添加长内容处理样式 */
     .content-ellipsis {
         white-space: nowrap;
@@ -74,8 +74,9 @@
                     <td class="align-middle text-nowrap"> {{ checkout.checkout_date|date:"Y/m/d" }} </td>
                     <td class="align-middle"> {{ checkout.PartNo }} </td>
                     <td class="align-middle"> {{ checkout.checkout_qty }} </td>
-                    <td class="align-middle content-ellipsis"> {% if checkout.sn_file %}<a href="{{ checkout.sn_file.url }}"
-                          target="_blank">{{checkout.sn_file.name|basename}}</a>{% else %}{{ checkout.SN|escape|linebreaksbr }}{% endif %} </td>
+                    <td class="align-middle content-ellipsis"> {% if checkout.sn_file %}<a
+                            href="{{ checkout.sn_file.url }}" target="_blank">{{checkout.sn_file.name|basename}}</a>{%
+                        else %}{{ checkout.SN|escape|linebreaksbr }}{% endif %} </td>
                     <td class="align-middle"> {{ checkout.DC }} </td>
                     <td class="align-middle"> {{ checkout.REV }} </td>
                     <td class="align-middle text-nowrap"> {{ checkout.Work_Order }} </td>
@@ -97,22 +98,24 @@
 <div class="list-group" id="rclick-menu">
     <a class="list-group-item list-group-item-action" href="{% url 'plans:add_checkouts' %}">添加</a>
     <a class="list-group-item list-group-item-action" href="{% url 'plans:edit_checkouts' pk=1 %}" id="edit_data">编辑</a>
-    <a class="list-group-item list-group-item-action" href="{% url 'plans:delete_checkouts' pk=1 %}" id="delete_data">删除</a>
+    <a class="list-group-item list-group-item-action" href="{% url 'plans:delete_checkouts' pk=1 %}"
+        id="delete_data">删除</a>
 </div>
 
 <div class="list-group" id="rclick-th-menu">
     <form method="post">
         {% csrf_token %}
-        <button type="submit" class="list-group-item list-group-item-action" formaction="{% url 'plans:add_checkouts' %}">添加</button>
+        <button type="submit" class="list-group-item list-group-item-action"
+            formaction="{% url 'plans:add_checkouts' %}">添加</button>
     </form>
 </div>
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         // 初始化表格列可拖拽调整宽度
         $("#datas_table").resizableTable();
     });
-    
+
     $(document).on("contextmenu", "#datas_table tbody tr", function (event) {
         event.preventDefault();
 

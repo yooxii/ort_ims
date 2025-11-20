@@ -1,4 +1,4 @@
-{% extends "ortplans/ort_base.html" %}
+{% extends "plans/ort_base.html" %}
 
 {% block header %}{% load static %}<h1>{% block title %}排程管理{% endblock title %}</h1>{% endblock header %}
 
@@ -13,7 +13,7 @@
         min-width: 120px;
         z-index: 1;
     }
-    
+
     /* 添加长内容处理样式 */
     .content-ellipsis {
         white-space: nowrap;
@@ -99,22 +99,24 @@
 <div class="list-group" id="rclick-menu">
     <a class="list-group-item list-group-item-action" href="{% url 'plans:add_schedules' pk=0 %}">添加</a>
     <a class="list-group-item list-group-item-action" href="{% url 'plans:edit_schedules' pk=1 %}" id="edit_data">编辑</a>
-    <a class="list-group-item list-group-item-action" href="{% url 'plans:delete_schedules' pk=1 %}" id="delete_data">删除</a>
+    <a class="list-group-item list-group-item-action" href="{% url 'plans:delete_schedules' pk=1 %}"
+        id="delete_data">删除</a>
 </div>
 
 <div class="list-group" id="rclick-th-menu">
     <form method="post">
         {% csrf_token %}
-        <button type="submit" class="list-group-item list-group-item-action" formaction="{% url 'plans:add_schedules' pk=0 %}">添加</button>
+        <button type="submit" class="list-group-item list-group-item-action"
+            formaction="{% url 'plans:add_schedules' pk=0 %}">添加</button>
     </form>
 </div>
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         // 初始化表格列可拖拽调整宽度
         $("#datas_table").resizableTable();
     });
-    
+
     $(document).on("contextmenu", "#datas_table tbody tr", function (event) {
         event.preventDefault();
 

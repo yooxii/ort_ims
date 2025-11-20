@@ -1,6 +1,6 @@
 [
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 1,
         "fields": {
             "test_item": "Acoustic Noise Test",
@@ -11,7 +11,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 2,
         "fields": {
             "test_item": "Adapter EMI/Drop/Ball Impact",
@@ -22,7 +22,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 3,
         "fields": {
             "test_item": "Amazon All ORT Test",
@@ -33,7 +33,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 4,
         "fields": {
             "test_item": "Amazon Mechanical ORT Test",
@@ -44,7 +44,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 5,
         "fields": {
             "test_item": "For AMZ Burn In Test",
@@ -55,7 +55,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 6,
         "fields": {
             "test_item": "For Dell ORT Test (PC)",
@@ -66,7 +66,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 7,
         "fields": {
             "test_item": "Google _All",
@@ -77,7 +77,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 8,
         "fields": {
             "test_item": "Google_Burn In Test (By Day)",
@@ -88,7 +88,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 9,
         "fields": {
             "test_item": "Google_Tumble/Drop Test (By Day)",
@@ -99,7 +99,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 10,
         "fields": {
             "test_item": "Google_BI,Drop,Tumble Test (By Day)",
@@ -110,7 +110,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 11,
         "fields": {
             "test_item": "Google_EMI/ESD Test (By MO)",
@@ -121,7 +121,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 12,
         "fields": {
             "test_item": "Google_BI,Drop,Tumble,EMC Test (By MO&Day)",
@@ -132,7 +132,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 13,
         "fields": {
             "test_item": "ATE",
@@ -143,7 +143,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 14,
         "fields": {
             "test_item": "EMC&Dell ORT Test",
@@ -154,7 +154,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 15,
         "fields": {
             "test_item": "Ball Impact Test",
@@ -165,7 +165,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 16,
         "fields": {
             "test_item": "Bench Test",
@@ -176,7 +176,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 17,
         "fields": {
             "test_item": "Burn In Test",
@@ -187,7 +187,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 18,
         "fields": {
             "test_item": "Conducted EMI Measurement",
@@ -198,7 +198,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 19,
         "fields": {
             "test_item": "DMTBF Test",
@@ -209,7 +209,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 20,
         "fields": {
             "test_item": "Drop Test",
@@ -220,7 +220,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 21,
         "fields": {
             "test_item": "Electrical Fast Transient / Burst Immunity Test",
@@ -231,7 +231,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 22,
         "fields": {
             "test_item": "ESD Test",
@@ -242,7 +242,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 23,
         "fields": {
             "test_item": "HALT Test",
@@ -253,7 +253,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 24,
         "fields": {
             "test_item": "Harmonic",
@@ -264,7 +264,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 25,
         "fields": {
             "test_item": "HASA",
@@ -275,7 +275,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 26,
         "fields": {
             "test_item": "ION Test",
@@ -286,7 +286,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 27,
         "fields": {
             "test_item": "Microsection Analysis",
@@ -297,7 +297,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 28,
         "fields": {
             "test_item": "Non-Operational Temperature and Humidity Test",
@@ -308,7 +308,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 29,
         "fields": {
             "test_item": "ORT Rel Test For MP Stage",
@@ -319,7 +319,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 30,
         "fields": {
             "test_item": "ORT Rel Test For NPI Stage",
@@ -330,7 +330,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 31,
         "fields": {
             "test_item": "PLD Test",
@@ -341,7 +341,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 32,
         "fields": {
             "test_item": "POS Test",
@@ -352,7 +352,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 33,
         "fields": {
             "test_item": "Power and Temperature Cycling (PTC) Test",
@@ -363,7 +363,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 34,
         "fields": {
             "test_item": "Strain Gage Test",
@@ -374,7 +374,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 35,
         "fields": {
             "test_item": "Stress Analysis Test",
@@ -385,7 +385,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 36,
         "fields": {
             "test_item": "Surface Temperature Test",
@@ -396,7 +396,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 37,
         "fields": {
             "test_item": "Surge Immunity Test",
@@ -407,7 +407,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 38,
         "fields": {
             "test_item": "Taber Linear Abrasion",
@@ -418,7 +418,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 39,
         "fields": {
             "test_item": "Thermal Shock Test",
@@ -429,7 +429,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 40,
         "fields": {
             "test_item": "Thermal Test",
@@ -440,7 +440,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 41,
         "fields": {
             "test_item": "Tumble Test",
@@ -451,7 +451,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 42,
         "fields": {
             "test_item": "TCH_EMI,表面温升,Drop,Ball Test (By MO)",
@@ -462,7 +462,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 43,
         "fields": {
             "test_item": "Vibration Test",
@@ -473,7 +473,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 44,
         "fields": {
             "test_item": "Packing Vibration Test",
@@ -484,7 +484,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 45,
         "fields": {
             "test_item": "熔融指数",
@@ -495,7 +495,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 46,
         "fields": {
             "test_item": "海康威视All ORT Test (By季度&By月)",
@@ -506,7 +506,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 47,
         "fields": {
             "test_item": "海康威视B/I 168Hrs Test (By月)",
@@ -517,7 +517,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 48,
         "fields": {
             "test_item": "Connector Cycling Test",
@@ -528,7 +528,7 @@
         }
     },
     {
-        "model": "plans.ttestitem",
+        "model": "managements.ttestitem",
         "pk": 49,
         "fields": {
             "test_item": "Cross Section Analysis",

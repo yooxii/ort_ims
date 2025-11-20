@@ -95,6 +95,8 @@ LOCAL_APPS = [
     "ort_ims.users",
     # Your stuff: custom apps go here
     "ort_ims.plans",
+    "ort_ims.managements",
+    "ort_ims.ortreports",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
