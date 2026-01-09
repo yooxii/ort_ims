@@ -11,6 +11,7 @@
     <!-- <link rel="stylesheet" href="{% static 'css/index.css' %}" /> -->
     <script src="{% static 'plugins/jQuery/jquery-3.7.1.min.js' %}"></script>
     <script src="{% static 'plugins/bootstrap4.6.2/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/petite-vue.iife.js' %}" defer init></script>
     <style>
         nav img {
             width: 16px;
@@ -46,11 +47,18 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>报告</span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/"><img src="{% static 'img/icon/amz.svg' %}"
-                                    alt="AMZ" /><span>AMZ</span></a>
+                            <a class="dropdown-item" href="{% url 'ortreports:amz_report' %}"><img
+                                    src="{% static 'img/icon/amz.svg' %}" alt="AMZ" /><span>AMZ</span></a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href=""><img src="{% static 'img/icon/a-mxburn.svg' %}"
-                                    alt="EMI@168" /><span>EMI&amp;168</span></a>
+                            <a class="dropdown-item" href="{% url 'ortreports:burn_report' %}"><img
+                                    src="{% static 'img/icon/a-mxburn.svg' %}" alt="burn" /><span>Burn-168</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'ortreports:emc_report' %}"><img
+                                    src="{% static 'img/icon/a-mxburn.svg' %}" alt="EMC" /><span>EMC</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'ortreports:harmonic_report' %}"><img
+                                    src="{% static 'img/icon/a-mxburn.svg' %}"
+                                    alt="Harmonic" /><span>Harmonic</span></a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">

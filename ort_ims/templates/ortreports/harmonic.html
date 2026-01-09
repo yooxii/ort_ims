@@ -1,0 +1,65 @@
+{% extends "ort_base.html" %}
+{% load static %}
+
+{% block title %}Harmonic报告{% endblock title %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+<h2>Harmonic报告上传</h2>
+<div>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="upload_har_report">上传报告</label>
+            <input type="file" class="form-control" id="upload_har_report" name="upload_har_report">
+        </div>
+        <input class="btn btn-primary" type="submit" value="提交">
+    </form>
+</div>
+{% verbatim %}
+
+
+{% endverbatim %}
+<!-- 
+<div>
+    <form method="post">
+
+        {% csrf_token %}
+        <table class="table table-striped table-bordered table-sm">
+            <tr>
+                <td>
+                    <span>数据上传:</span>
+                </td>
+                <td>
+                    <input type="file" name="file" id="file"></input>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>负载数量:</span>
+                </td>
+                <td>
+                    <input type="number" name="load_num" id="load_num" value="3"></input>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>模版选择:</span>
+                </td>
+                <td>
+                    <select name="template" id="template">
+                        {% for template in templates %}
+                        <option value="{{ template.id }}">{{ template.name }}</option>
+                        {% empty %}
+                        <option value="">无模版</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</div> -->
+{% endblock content %}

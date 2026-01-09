@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponseBadRequest
+from django.http import HttpResponseBadRequest, HttpRequest
 from django.core.exceptions import ValidationError
 from datetime import datetime, timedelta
 
@@ -22,7 +22,7 @@ from ort_ims.common.views import *
 
 
 def index(request):
-    return render(request, "plans/index.html")
+    return render(request, "index.html")
 
 
 ################# Checkouts #################
@@ -49,7 +49,7 @@ def export_checkouts(request):
     return render(request, "plans/export_checkouts.html")
 
 
-def edit_checkouts(request, pk=0):
+def edit_checkouts(request: HttpRequest, pk=0):
     model_class = TCheckouts
     form_class = CheckoutForm
     template_name = "plans/edit_table1.html"
