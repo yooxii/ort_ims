@@ -1,13 +1,16 @@
-from django import forms
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Submit, Row, Column, Div, Field
+from crispy_forms.layout import Column
+from crispy_forms.layout import Div
+from crispy_forms.layout import Field
+from crispy_forms.layout import Layout
+from crispy_forms.layout import Row
+from crispy_forms.layout import Submit
+from django import forms
 
-from ort_ims.managements.models import (
-    TTechnician,
-    TProductType,
-    TCustCode,
-    TTestItem,
-)
+from ort_ims.managements.models import TCustCode
+from ort_ims.managements.models import TProductType
+from ort_ims.managements.models import TTechnician
+from ort_ims.managements.models import TTestItem
 
 
 class CustCodeForm(forms.ModelForm):
@@ -19,7 +22,7 @@ class CustCodeForm(forms.ModelForm):
         ]
 
     def __init__(self, *args, **kwargs):
-        super(CustCodeForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_method = "post"
         self.helper.layout = Layout(
@@ -49,7 +52,7 @@ class TestItemForm(forms.ModelForm):
         ]
 
     def __init__(self, *args, **kwargs):
-        super(TestItemForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_method = "post"
         self.helper.layout = Layout(
@@ -82,7 +85,7 @@ class ProductTypeForm(forms.ModelForm):
         ]
 
     def __init__(self, *args, **kwargs):
-        super(ProductTypeForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_method = "post"
         self.helper.layout = Layout(
@@ -106,7 +109,7 @@ class TechnicianForm(forms.ModelForm):
         fields = ["tech_code", "tech_name", "tech_email", "tech_phone"]
 
     def __init__(self, *args, **kwargs):
-        super(TechnicianForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_method = "post"
         self.helper.layout = Layout(

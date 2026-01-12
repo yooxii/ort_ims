@@ -1,6 +1,5 @@
 from django.db import models
 
-
 # Create your models here.
 
 
@@ -49,17 +48,15 @@ class TTestItem(models.Model):
     test_owner = models.CharField(
         verbose_name="测试负责人",
         max_length=50,
-        null=True,
         blank=True,
     )
     dispose = models.CharField(
         verbose_name="样品处理",
         max_length=25,
         choices=(("回线", "回线"), ("报废", "报废")),
-        null=True,
         blank=True,
     )
-    Remark = models.TextField(verbose_name="备注", null=True, blank=True)
+    Remark = models.TextField(verbose_name="备注", blank=True)
 
     def __str__(self):
         return self.test_item
@@ -78,13 +75,11 @@ class TTechnician(models.Model):
     )
     tech_email = models.EmailField(
         verbose_name="邮箱",
-        null=True,
         blank=True,
     )
     tech_phone = models.CharField(
         verbose_name="电话",
         max_length=20,
-        null=True,
         blank=True,
     )
 

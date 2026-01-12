@@ -1,22 +1,24 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponseBadRequest
-from django.core.exceptions import ValidationError
-from datetime import datetime, timedelta
+from datetime import datetime
+from datetime import timedelta
 
+from django.core.exceptions import ValidationError
+from django.http import HttpResponseBadRequest
+from django.shortcuts import get_object_or_404
+from django.shortcuts import redirect
+from django.shortcuts import render
 from django.views import generic
 
-# Create your views here.
-
-from ort_ims.common.views import *
-
-from ort_ims.managements.models import (
-    TTechnician,
-    TProductType,
-    TCustCode,
-    TTestItem,
-)
-from ort_ims.managements.forms import *
-
+from ort_ims.common.views import handle_delete
+from ort_ims.common.views import render_add_form
+from ort_ims.common.views import render_edit_form
+from ort_ims.managements.forms import CustCodeForm
+from ort_ims.managements.forms import ProductTypeForm
+from ort_ims.managements.forms import TechnicianForm
+from ort_ims.managements.forms import TestItemForm
+from ort_ims.managements.models import TCustCode
+from ort_ims.managements.models import TProductType
+from ort_ims.managements.models import TTechnician
+from ort_ims.managements.models import TTestItem
 
 ################# Technicians #################
 

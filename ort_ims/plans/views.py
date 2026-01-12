@@ -1,24 +1,25 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponseBadRequest, HttpRequest
-from django.core.exceptions import ValidationError
-from datetime import datetime, timedelta
+from datetime import datetime
+from datetime import timedelta
 
+from django.core.exceptions import ValidationError
+from django.http import HttpRequest
+from django.http import HttpResponseBadRequest
+from django.shortcuts import get_object_or_404
+from django.shortcuts import redirect
+from django.shortcuts import render
 from django.views import generic
 
-# Create your views here.
-from ort_ims.plans.models import (
-    TSchedule,
-    TCheckouts,
-)
-from ort_ims.plans.forms import *
+from ort_ims.common.views import handle_delete
+from ort_ims.managements.models import TCustCode
+from ort_ims.managements.models import TProductType
+from ort_ims.managements.models import TTechnician
+from ort_ims.managements.models import TTestItem
+from ort_ims.plans.forms import CheckoutForm
+from ort_ims.plans.forms import ScheduleForm
+from ort_ims.plans.models import TCheckouts
 
-from ort_ims.managements.models import (
-    TTechnician,
-    TProductType,
-    TCustCode,
-    TTestItem,
-)
-from ort_ims.common.views import *
+# Create your views here.
+from ort_ims.plans.models import TSchedule
 
 
 def index(request):
@@ -88,10 +89,8 @@ def edit_checkouts(request: HttpRequest, pk=0):
             if sch:
                 return redirect("edit_schedules", sch.id)
             return redirect("add_schedules", pk=obj.id)
-        else:
-            return redirect(redirect_view_name)
-    else:
-        return render(request, template_name, {"title": title_text, "form": form})
+        return redirect(redirect_view_name)
+    return render(request, template_name, {"title": title_text, "form": form})
 
 
 def add_checkouts(request):
@@ -111,10 +110,8 @@ def add_checkouts(request):
         obj = form.save()
         if "save_and_schedule" in request.POST:
             return redirect("add_schedules", pk=obj.id)
-        else:
-            return redirect(redirect_view_name)
-    else:
-        return render(request, template_name, {"title": title_text, "form": form})
+        return redirect(redirect_view_name)
+    return render(request, template_name, {"title": title_text, "form": form})
 
 
 def delete_checkouts(request, pk):
@@ -165,10 +162,9 @@ class EditSchedulesView(generic.DetailView):
         if form.is_valid():
             form.save()
             return redirect(self.redirect_view_name)
-        else:
-            return render(
-                request, self.template_name, {"title": self.title_text, "form": form}
-            )
+        return render(
+            request, self.template_name, {"title": self.title_text, "form": form}
+        )
 
 
 def deal_schedule_datas(form: ScheduleForm):
@@ -210,7 +206,7 @@ def deal_schedule_datas(form: ScheduleForm):
 
         if start_date:
             end_date = datetime.strptime(start_date, "%Y-%m-%d") + timedelta(
-                hours=float(obj_test_item.test_time)
+                hours=float(obj_test_item.test_time),
             )
         else:
             raise ValidationError("StartDate未提供")
@@ -222,7 +218,7 @@ def deal_schedule_datas(form: ScheduleForm):
                 "TestPeriod": obj_test_item.test_time,
                 "Owner": obj_test_item.test_owner,
                 "EndDate": datetime.strftime(end_date, "%Y-%m-%d"),
-            }
+            },
         )
 
     except (ValueError, ValidationError) as e:
@@ -259,13 +255,13 @@ def add_schedules(request, checkout_id):
                     "SampleSize": obj.checkout_qty,
                     "Work_Order": obj.Work_Order,
                     "StartDate": obj.checkout_date,
-                }
+                },
             )
         else:
             form = ScheduleForm(
                 initial={
                     "JobNo": cur_job_no,
-                }
+                },
             )
         return render(request, template_name, {"title": title_text, "form": form})
 
@@ -277,8 +273,7 @@ def add_schedules(request, checkout_id):
     if form.is_valid():
         form.save()
         return redirect(redirect_view_name)
-    else:
-        return render(request, template_name, {"title": title_text, "form": form})
+    return render(request, template_name, {"title": title_text, "form": form})
 
 
 def delete_schedules(request, pk):

@@ -20,6 +20,10 @@ warn_redundant_casts = true
 warn_unused_configs = true
 plugins = ["mypy_django_plugin.main", "mypy_drf_plugin.main"]
 
+[[tool.uv.index]]
+url = "https://mirrors.aliyun.com/pypi/simple"
+default = true
+
 [[tool.mypy.overrides]]
 # Django migrations should not produce any errors:
 module = "*.migrations.*"
@@ -173,6 +177,7 @@ dependencies = [
     "openpyxl>=3.1.5",
     "pillow==12.0.0",
     "psycopg[binary]==3.2.12",
+    "pytest>=8.4.2",
     "python-slugify==8.0.4",
     "pywin32>=311",
     "rapidfuzz>=3.14.3",
@@ -181,7 +186,3 @@ dependencies = [
     "sentry-sdk==2.43.0",
     "whitenoise==6.11.0",
 ]
-
-[[tool.uv.index]]
-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-default = true

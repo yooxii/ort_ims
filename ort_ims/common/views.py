@@ -1,16 +1,21 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django import forms
+from django.db import models
+from django.http import HttpRequest
+from django.shortcuts import get_object_or_404
+from django.shortcuts import redirect
+from django.shortcuts import render
 
 ################# Common Functions #################
 
 
-def render_edit_form(
-    request,
-    model_class,
-    form_class,
-    object_id,
-    template_name,
-    redirect_view_name,
-    title_text,
+def render_edit_form(  # noqa: PLR0913
+    request: HttpRequest,
+    model_class: models.Model,
+    form_class: forms.ModelForm,
+    object_id: int,
+    template_name: str,
+    redirect_view_name: str,
+    title_text: str,
 ):
     """编辑函数模板
 
@@ -36,8 +41,7 @@ def render_edit_form(
     if form.is_valid():
         form.save()
         return redirect(redirect_view_name)
-    else:
-        return render(request, template_name, {"title": title_text, "form": form})
+    return render(request, template_name, {"title": title_text, "form": form})
 
 
 def render_add_form(request, form_class, template_name, redirect_view_name, title_text):
@@ -62,8 +66,7 @@ def render_add_form(request, form_class, template_name, redirect_view_name, titl
     if form.is_valid():
         form.save()
         return redirect(redirect_view_name)
-    else:
-        return render(request, template_name, {"title": title_text, "form": form})
+    return render(request, template_name, {"title": title_text, "form": form})
 
 
 def handle_delete(request, model_class, object_id, redirect_view_name):

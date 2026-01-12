@@ -1,5 +1,5 @@
-from django.urls import path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.urls import path
 
 from . import views
 
@@ -21,7 +21,9 @@ urlpatterns = [
     ################# TestItems #################
     path("testitems", views.testitems, name="testitems"),
     path(
-        "<int:testitem_id>/edit_testitems", views.edit_testitems, name="edit_testitems"
+        "<int:testitem_id>/edit_testitems",
+        views.edit_testitems,
+        name="edit_testitems",
     ),
     path("add_testitems", views.add_testitems, name="add_testitems"),
     path(
@@ -32,7 +34,9 @@ urlpatterns = [
     ################# CustProducts #################
     path("custproducts", views.custproducts, name="custproducts"),
     path(
-        "<int:customer_id>/edit_customers", views.edit_customers, name="edit_customers"
+        "<int:customer_id>/edit_customers",
+        views.edit_customers,
+        name="edit_customers",
     ),
     path("<int:product_id>/edit_products", views.edit_products, name="edit_products"),
     path("add_customers", views.add_customers, name="add_customers"),
