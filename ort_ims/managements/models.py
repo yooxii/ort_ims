@@ -48,15 +48,15 @@ class TTestItem(models.Model):
     test_owner = models.CharField(
         verbose_name="测试负责人",
         max_length=50,
-        blank=True,
+        default="NA",
     )
     dispose = models.CharField(
         verbose_name="样品处理",
         max_length=25,
         choices=(("回线", "回线"), ("报废", "报废")),
-        blank=True,
+        default="回线",
     )
-    Remark = models.TextField(verbose_name="备注", blank=True)
+    Remark = models.TextField(verbose_name="备注", default="")
 
     def __str__(self):
         return self.test_item
@@ -75,12 +75,12 @@ class TTechnician(models.Model):
     )
     tech_email = models.EmailField(
         verbose_name="邮箱",
-        blank=True,
+        default="",
     )
     tech_phone = models.CharField(
         verbose_name="电话",
         max_length=20,
-        blank=True,
+        default="",
     )
 
     def __str__(self):

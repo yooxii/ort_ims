@@ -11,21 +11,21 @@ from rich import inspect
 from config.settings.base import BASE_DIR
 
 DATAFILES_DIR = Path(BASE_DIR) / "DataFiles"
-REPORT_DIR = (DATAFILES_DIR) / "ortreports"
+REPORT_DIR = (DATAFILES_DIR) / "reports"
 REPORT_TEMPLATE_DIR = (REPORT_DIR) / "Template"
 
 
 # Create your views here.
 def amz_report(request: HttpRequest):
-    return render(request, "ortreports/amz.html")
+    return render(request, "reports/amz.html")
 
 
 def burn_report(request: HttpRequest):
-    return render(request, "ortreports/burn.html")
+    return render(request, "reports/burn.html")
 
 
 def emc_report(request: HttpRequest):
-    return render(request, "ortreports/emc.html")
+    return render(request, "reports/emc.html")
 
 
 def harmonic_report(request: HttpRequest):
@@ -35,11 +35,11 @@ def harmonic_report(request: HttpRequest):
         for template in Path.iterdir(harmonic_path):
             harmonic_id = template.split(" ")[0]
             har_templates.append({"id": harmonic_id, "name": template})
-        return render(request, "ortreports/harmonic.html", {"templates": har_templates})
+        return render(request, "reports/harmonic.html", {"templates": har_templates})
     if request.method == "POST":
         from libs.makereports.harmonic import make_harmonic_report
 
         har_report = request.FILES
         inspect(har_report.values())
-        return render(request, "ortreports/harmonic.html")
+        return render(request, "reports/harmonic.html")
     return None

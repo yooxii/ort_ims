@@ -1,14 +1,11 @@
-import win32com.client as win32
-import openpyxl as xl
-import os
-import sys
 import json
+import os
 import shutil
-from rapidfuzz import fuzz, process
 
-libs_path = os.path.join(os.path.dirname(__file__), "..")
-sys.path.insert(0, libs_path)
-
+import openpyxl as xl
+import win32com.client as win32
+from rapidfuzz import fuzz
+from rapidfuzz import process
 from utils.timer import timer
 
 STANDARD_TEMPLATE_DIR = ".\\DataFiles\\report_templates\\# ORT Test Report (WK#)_#"
@@ -21,7 +18,7 @@ def manual_input(info: dict):
     手动输入信息
     """
     res = info.copy()
-    for sheet_name in info:
+    for sheet_name in info.items():
         for title in info[sheet_name]:
             res[sheet_name][title].append(input(title + ": "))
 

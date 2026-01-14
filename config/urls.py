@@ -24,7 +24,7 @@ urlpatterns = [
     # Your stuff: custom urls includes go here
     path("plans/", include("ort_ims.plans.urls", namespace="plans")),
     path("managements/", include("ort_ims.managements.urls", namespace="managements")),
-    path("reports/", include("ort_ims.ortreports.urls", namespace="ortreports")),
+    path("reports/", include("ort_ims.reports.urls", namespace="reports")),
     # ...
     # Media files
     *static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),

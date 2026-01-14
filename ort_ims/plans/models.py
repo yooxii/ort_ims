@@ -1,32 +1,25 @@
-import os
+from pathlib import Path
+
 from django.db import models
-from django.db.models.signals import pre_delete
+from django.utils import timezone
 from django.utils.deconstruct import deconstructible
-
-from datetime import datetime, timedelta
-
-from ort_ims.managements.models import (
-    TProductType,
-    TCustCode,
-    TTestItem,
-)
 
 
 @deconstructible
-class RenameSNFile(object):
-    def __init__(self, sub_path):
-        self.path = sub_path
+class RenameFile:
+    def __init__(self, sub_path: str):
+        self.path = Path(sub_path)
 
     def __call__(self, instance, filename):
         ext = filename.split(".")[-1]
         # 获取当前年月
-        now = datetime.now()
+        now = timezone.now()
         year_month = now.strftime("%Y/%m")
-        filename = "{}/{}.{}".format(year_month, instance.PartNo, ext)
-        return os.path.join(self.path, filename)
+        filename = f"{year_month}/{instance.PartNo}.{ext}"
+        return self.path / filename
 
 
-rename_sn_file = RenameSNFile("sn_files/")
+rename_sn_file = RenameFile("sn_files/")
 
 
 class TSchedule(models.Model):
@@ -84,9 +77,8 @@ class TSchedule(models.Model):
     )
     Owner = models.CharField(
         verbose_name="负责人",
-        null=True,
-        blank=True,
         max_length=50,
+        default="NA",
     )
     StartDate = models.DateField(
         verbose_name="开始日期",
@@ -117,8 +109,7 @@ class TSchedule(models.Model):
     )
     Remark = models.TextField(
         verbose_name="备注",
-        null=True,
-        blank=True,
+        default="",
     )
 
     def __str__(self):
@@ -144,8 +135,8 @@ class TCheckouts(models.Model):
     )
     SN = models.TextField(
         verbose_name="序列号",
-        null=True,
         blank=True,
+        default="",
     )
     DC = models.CharField(
         verbose_name="周期",
@@ -162,8 +153,7 @@ class TCheckouts(models.Model):
     )
     Remarks = models.TextField(
         verbose_name="备注",
-        null=True,
-        blank=True,
+        default="",
     )
     checkout_status = models.IntegerField(
         verbose_name="领出状态",

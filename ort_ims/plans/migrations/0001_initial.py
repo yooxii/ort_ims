@@ -51,7 +51,7 @@ class Migration(migrations.Migration):
                     models.FileField(
                         blank=True,
                         null=True,
-                        upload_to=ort_ims.plans.models.RenameSNFile("sn_files/"),
+                        upload_to=ort_ims.plans.models.RenameFile("sn_files/"),
                         verbose_name="序列号文件",
                     ),
                 ),
