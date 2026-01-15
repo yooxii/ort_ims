@@ -56,7 +56,11 @@ class TTestItem(models.Model):
         choices=(("回线", "回线"), ("报废", "报废")),
         default="回线",
     )
-    Remark = models.TextField(verbose_name="备注", default="")
+    Remark = models.TextField(
+        verbose_name="备注",
+        default="",
+        blank=True,
+    )
 
     def __str__(self):
         return self.test_item

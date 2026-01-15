@@ -110,6 +110,7 @@ class TSchedule(models.Model):
     Remark = models.TextField(
         verbose_name="备注",
         default="",
+        blank=True,
     )
 
     def __str__(self):
@@ -132,6 +133,7 @@ class TCheckouts(models.Model):
     )
     checkout_qty = models.IntegerField(
         verbose_name="领出数量",
+        default=3,
     )
     SN = models.TextField(
         verbose_name="序列号",
@@ -151,9 +153,10 @@ class TCheckouts(models.Model):
         max_length=40,
         unique=True,
     )
-    Remarks = models.TextField(
+    Remark = models.TextField(
         verbose_name="备注",
         default="",
+        blank=True,
     )
     checkout_status = models.IntegerField(
         verbose_name="领出状态",

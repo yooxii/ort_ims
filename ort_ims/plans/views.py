@@ -55,7 +55,7 @@ def edit_checkouts(request: HttpRequest, pk=0):
     form_class = CheckoutForm
     template_name = "plans/edit_table1.html"
     object_id = pk
-    redirect_view_name = "checkouts"
+    redirect_view_name = "plans:checkouts"
     title_text = "领用编辑"
 
     if request.method == "GET":
@@ -87,8 +87,8 @@ def edit_checkouts(request: HttpRequest, pk=0):
         if "save_and_schedule" in request.POST:
             sch = TSchedule.objects.filter(Work_Order=obj.Work_Order).first()
             if sch:
-                return redirect("edit_schedules", sch.id)
-            return redirect("add_schedules", pk=obj.id)
+                return redirect("plans:edit_schedules", sch.id)
+            return redirect("plans:add_schedules", pk=obj.id)
         return redirect(redirect_view_name)
     return render(request, template_name, {"title": title_text, "form": form})
 
@@ -96,7 +96,7 @@ def edit_checkouts(request: HttpRequest, pk=0):
 def add_checkouts(request):
     template_name = "plans/edit_table1.html"
     form_class = CheckoutForm
-    redirect_view_name = "checkouts"
+    redirect_view_name = "plans:checkouts"
     title_text = "领用添加"
 
     if request.method == "GET":
@@ -109,7 +109,7 @@ def add_checkouts(request):
     if form.is_valid():
         obj = form.save()
         if "save_and_schedule" in request.POST:
-            return redirect("add_schedules", pk=obj.id)
+            return redirect("plans:add_schedules", pk=obj.id)
         return redirect(redirect_view_name)
     return render(request, template_name, {"title": title_text, "form": form})
 
@@ -227,9 +227,9 @@ def deal_schedule_datas(form: ScheduleForm):
     return form
 
 
-def add_schedules(request, checkout_id):
+def add_schedules(request, pk):
     template_name = "plans/edit_table1.html"
-    redirect_view_name = "schedules"
+    redirect_view_name = "plans:schedules"
     title_text = "排程编辑"
 
     if request.method == "GET":
@@ -246,8 +246,8 @@ def add_schedules(request, checkout_id):
             cur_job_no = "RT" + year_month + "01"
         ###### 自动生成JobNo ######
 
-        if checkout_id != 0:
-            obj = get_object_or_404(TCheckouts, id=checkout_id)
+        if pk != 0:
+            obj = get_object_or_404(TCheckouts, id=pk)
             form = ScheduleForm(
                 initial={
                     "JobNo": cur_job_no,

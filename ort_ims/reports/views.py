@@ -37,7 +37,6 @@ def harmonic_report(request: HttpRequest):
             har_templates.append({"id": harmonic_id, "name": template})
         return render(request, "reports/harmonic.html", {"templates": har_templates})
     if request.method == "POST":
-        from libs.makereports.harmonic import make_harmonic_report
 
         har_report = request.FILES
         inspect(har_report.values())

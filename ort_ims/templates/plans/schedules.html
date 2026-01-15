@@ -29,7 +29,7 @@
 <div class="peek">
     <h3>排程管理</h3>
     {% if not schedules_edit_btns %}
-    <form method="post" action="{% url 'plans:import_schedules' %}" enctype="multipart/form-data" id="uploadForm">
+    <!-- <form method="post" action="{% url 'plans:import_schedules' %}" enctype="multipart/form-data" id="uploadForm">
         <div class="input-group mb-3 w-50">
             <div class="input-group-prepend">
                 <button class="btn btn-outline-secondary" type="submit" id="uploadBtn">导入</button>
@@ -40,7 +40,7 @@
                 <label class="custom-file-label" for="fileInput">选择文件</label>
             </div>
         </div>
-    </form>
+    </form> -->
     {% endif %}
     <div class="table-responsive">
         <table class="table table-hover table-striped table-bordered table-sm" id="datas_table">
@@ -98,9 +98,8 @@
 
 <div class="list-group" id="rclick-menu">
     <a class="list-group-item list-group-item-action" href="{% url 'plans:add_schedules' pk=0 %}">添加</a>
-    <a class="list-group-item list-group-item-action" href="{% url 'plans:edit_schedules' pk=1 %}" id="edit_data">编辑</a>
-    <a class="list-group-item list-group-item-action" href="{% url 'plans:delete_schedules' pk=1 %}"
-        id="delete_data">删除</a>
+    <a class="list-group-item list-group-item-action" href="#" id="edit_data">编辑</a>
+    <a class="list-group-item list-group-item-action" href="#" id="delete_data">删除</a>
 </div>
 
 <div class="list-group" id="rclick-th-menu">
@@ -125,9 +124,10 @@
         console.log(row_id);
 
         hideMenu();
-
-        $("#edit_data").attr("href", "{% url 'plans:edit_schedules' pk=1 %}".replace('1', row_id));
-        $("#delete_data").attr("href", "{% url 'plans:delete_schedules' pk=1 %}".replace('1', row_id));
+        if (row_id) {
+            $("#edit_data").attr("href", "{% url 'plans:edit_schedules' pk=1 %}".replace('1', row_id));
+            $("#delete_data").attr("href", "{% url 'plans:delete_schedules' pk=1 %}".replace('1', row_id));
+        }
 
         // 在鼠标点击的位置显示自定义右键菜单
         $("#rclick-menu").css({

@@ -1,10 +1,15 @@
-from django import forms
-from ort_ims.plans.models import (
-    TSchedule,
-    TCheckouts,
-)
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Submit, Row, Column, Div, Field, Button
+from crispy_forms.layout import Button
+from crispy_forms.layout import Column
+from crispy_forms.layout import Div
+from crispy_forms.layout import Field
+from crispy_forms.layout import Layout
+from crispy_forms.layout import Row
+from crispy_forms.layout import Submit
+from django import forms
+
+from ort_ims.plans.models import TCheckouts
+from ort_ims.plans.models import TSchedule
 
 
 class CheckoutForm(forms.ModelForm):
@@ -20,17 +25,17 @@ class CheckoutForm(forms.ModelForm):
             "Work_Order",
             "checkout_status",
             "SN",
-            "Remarks",
+            "Remark",
             "sn_file",
         ]
         widgets = {
-            "checkout_date": forms.DateInput(attrs={"type": "date"}, format="%Y-%m-%d"),
+            "checkout_date": forms.DateInput(attrs={"type": "date"}, format="%Y/%m/%d"),
             "SN": forms.Textarea(attrs={"rows": 5}),
-            "Remarks": forms.Textarea(attrs={"rows": 5}),
+            "Remark": forms.Textarea(attrs={"rows": 5}),
         }
 
     def __init__(self, *args, **kwargs):
-        super(CheckoutForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_method = "post"
         self.helper.layout = Layout(
@@ -54,7 +59,7 @@ class CheckoutForm(forms.ModelForm):
                 css_class="form-row",
             ),
             Row(
-                Column("Remarks", css_class="form-group col-md-12 mb-0"),
+                Column("Remark", css_class="form-group col-md-12 mb-0"),
                 css_class="form-row",
             ),
             Div(
@@ -78,7 +83,8 @@ class CheckoutForm(forms.ModelForm):
         sn_file = cleaned_data.get("sn_file")
         sn = cleaned_data.get("SN")
         if not sn_file and not sn:
-            raise forms.ValidationError("请上传SN文件或输入SN信息")
+            msg = "请上传SN文件或输入SN信息"
+            raise forms.ValidationError(msg)
         if sn_file:
             cleaned_data["SN"] = ""
         return cleaned_data
@@ -112,7 +118,7 @@ class ScheduleForm(forms.ModelForm):
         }
 
     def __init__(self, *args, **kwargs):
-        super(ScheduleForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_method = "post"
         self.helper.layout = Layout(

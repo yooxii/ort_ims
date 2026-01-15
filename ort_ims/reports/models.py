@@ -81,7 +81,7 @@ class TORTReports(models.Model):
     close_date = models.DateField(
         verbose_name="完成日期",
     )
-    Remarks = models.TextField(
+    Remark = models.TextField(
         verbose_name="备注",
         default="",
     )
