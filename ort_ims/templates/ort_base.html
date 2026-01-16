@@ -5,38 +5,39 @@
 <title>{% block title %}首页{% endblock title %}</title>
 
 <head>
-    <title>ORT报告工作站</title>
     <link rel="stylesheet" href="{% static 'plugins/bootstrap4.6.2/css/bootstrap.css' %}" />
-    <!-- <link rel="stylesheet" href="{% static 'css/lazy.css' %}" /> -->
+    <link rel="stylesheet" href="{% static 'css/docs.css' %}" />
     <!-- <link rel="stylesheet" href="{% static 'css/index.css' %}" /> -->
     <script src="{% static 'plugins/jQuery/jquery-3.7.1.min.js' %}"></script>
     <script src="{% static 'plugins/bootstrap4.6.2/js/bootstrap.bundle.min.js' %}"></script>
     <!-- <script src="{% static 'js/petite-vue.iife.js' %}" defer init></script> -->
     <style>
-        nav img {
+        header img {
             width: 16px;
             height: 16px;
         }
     </style>
 </head>
 
-<body class="container-fluid">
-    <main class="mb-5">
-        <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <img style="width: 35px; height: 25px;" src="{% static 'img/acbel.png' %}" alt="首页" />
+<body>
+    <main>
+        <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar shadow">
+            <a class="navbar-brand mr-0 mr-md-2" href="{% url 'plans:index' %}">
+                <img style="width: 35px; height: 25px;" src="{% static 'img/acbel.png' %}" alt="首页" /></a>
+            <div class="navbar-nav-scroll" id="navbarSupportedContent">
+                <ul class="navbar-nav bd-navbar-nav flex-row">
                     <li class="nav-item">
-                        <a class="nav-link text-center" href="{% url 'plans:index' %}">首页</a>
+                        <a class="nav-link" href="{% url 'plans:index' %}">首页</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="Dropdown_plan" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>计划</span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="Dropdown_plan">
-                            <a class="dropdown-item" href="{% url 'plans:checkouts' %}"><img
-                                    src="{% static 'img/icon/icn_wuzilingtuiliaochaxun.svg' %}"
-                                    alt="领用" /><span>领用</span></a>
+                            <a class="dropdown-item" href="{% url 'plans:checkouts' %}">
+                                <img src="{% static 'img/icon/icn_wuzilingtuiliaochaxun.svg' %}" alt="领用" />
+                                <span>领用</span>
+                            </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{% url 'plans:schedules' %}"><img
                                     src="{% static 'img/icon/paicheng.svg' %}" alt="排程" /><span>排程</span></a>
@@ -92,22 +93,14 @@
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form> -->
             </div>
-        </nav>
-        <!-- <header>
-            {% block header %}
-            <h1>ORT报告工作站</h1>
-            <div>
-                <p>ORT报告工作站，为您提供报告、审查、反馈等服务。</p>
-            </div>
-            {% endblock header %}
-        </header> -->
+        </header>
         <div class="container_content" id="container">
             {% block content %} {% endblock content %}
             {% block right_peek %} {% endblock right_peek %}
         </div>
     </main>
     <footer class="d-block justify-content-center fixed-bottom bg-light text-center">
-        <p>版权所有 © 2025 ORT报告工作站</p>
+        <p>版权所有 © 2026 ORT报告工作站</p>
     </footer>
     <script src="{% static 'js/index.js' %}"></script>
 </body>

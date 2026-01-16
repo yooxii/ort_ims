@@ -29,7 +29,7 @@ class CheckoutForm(forms.ModelForm):
             "sn_file",
         ]
         widgets = {
-            "checkout_date": forms.DateInput(attrs={"type": "date"}, format="%Y/%m/%d"),
+            "checkout_date": forms.DateInput(attrs={"type": "date"}, format="%Y-%m-%d"),
             "SN": forms.Textarea(attrs={"rows": 5}),
             "Remark": forms.Textarea(attrs={"rows": 5}),
         }

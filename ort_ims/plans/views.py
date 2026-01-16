@@ -115,7 +115,7 @@ def add_checkouts(request):
 
 
 def delete_checkouts(request, pk):
-    return handle_delete(request, TCheckouts, pk, "checkouts")
+    return handle_delete(request, TCheckouts, pk, "plans:checkouts")
 
 
 ################# Schedules #################
@@ -138,7 +138,7 @@ class EditSchedulesView(generic.DetailView):
     model = TSchedule
     form_class = ScheduleForm
     template_name = "plans/edit_table1.html"
-    redirect_view_name = "schedules"
+    redirect_view_name = "plans:schedules"
     title_text = "排程编辑"
     obj = None
 
@@ -230,7 +230,7 @@ def deal_schedule_datas(form: ScheduleForm):
 def add_schedules(request, pk):
     template_name = "plans/edit_table1.html"
     redirect_view_name = "plans:schedules"
-    title_text = "排程编辑"
+    title_text = "排程添加"
 
     if request.method == "GET":
         ###### 自动生成JobNo ######
@@ -277,4 +277,4 @@ def add_schedules(request, pk):
 
 
 def delete_schedules(request, pk):
-    return handle_delete(request, TSchedule, pk, "schedules")
+    return handle_delete(request, TSchedule, pk, "plans:schedules")

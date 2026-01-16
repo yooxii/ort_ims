@@ -1,6 +1,52 @@
-{% extends "ort_base.html" %} {% block content %}
-<div style="width: 100%; grid-column: 1/4">
-    <h2>欢迎</h2>
-    <p>2025年5月1日，ORT报告工作站正式上线，欢迎各位ORT专业人员使用。</p>
+{% extends "ort_base.html" %}
+{% block header %}
+{% endblock header %}
+{% block content %}
+<div class="container text-center">
+    <h1>ORT报告工作站</h1>
+    <div>
+        <p>ORT报告工作站，为您提供报告、审查、反馈等服务。</p>
+    </div>
 </div>
-{% endblock content %} {% block right_peek %} {% include "plans/calendar.html" %} {% endblock right_peek %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">计划</h5>
+                    <p class="card-text">添加和管理领用、排程</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <span>领用</span>
+                            <a href="{% url 'plans:checkouts' %}" class="btn btn-primary">进入领用</a>
+                        </li>
+                        <li class="list-group-item">
+                            <span>排程</span>
+                            <a href="{% url 'plans:schedules' %}" class="btn btn-primary">进入排程</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">报告</h5>
+                    <p class="card-text">管理ORT报告</p>
+                    <a href="{% url 'reports:amz_report' %}" class="btn btn-primary">进入</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">计划</h5>
+                    <p class="card-text">领用、排程</p>
+                    <a href="{% url 'plans:index' %}" class="btn btn-primary">进入</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+{% block right_peek %} {% endblock right_peek %}

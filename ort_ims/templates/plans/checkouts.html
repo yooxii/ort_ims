@@ -74,9 +74,14 @@
                     <td class="align-middle text-nowrap"> {{ checkout.checkout_date|date:"Y/m/d" }} </td>
                     <td class="align-middle"> {{ checkout.PartNo }} </td>
                     <td class="align-middle"> {{ checkout.checkout_qty }} </td>
-                    <td class="align-middle content-ellipsis"> {% if checkout.sn_file %}<a
-                            href="{{ checkout.sn_file.url }}" target="_blank">{{checkout.sn_file.name|basename}}</a>{%
-                        else %}{{ checkout.SN|escape|linebreaksbr }}{% endif %} </td>
+                    <td class="align-middle content-ellipsis">
+                        {% if checkout.sn_file %}
+                        <a href="{{ checkout.sn_file.url }}" target="_blank">
+                            {{checkout.sn_file.name|basename}}</a>
+                        {% else %}
+                        {{ checkout.SN|escape|linebreaksbr }}
+                        {% endif %}
+                    </td>
                     <td class="align-middle"> {{ checkout.DC }} </td>
                     <td class="align-middle"> {{ checkout.REV }} </td>
                     <td class="align-middle text-nowrap"> {{ checkout.Work_Order }} </td>
