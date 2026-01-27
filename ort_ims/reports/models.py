@@ -50,13 +50,14 @@ rename_overview = RenameFile("reports/")
 # Create your models here.
 class TORTReports(models.Model):
     id = models.AutoField(primary_key=True)
-    JobNo = models.ForeignKey(
+    jobno = models.ForeignKey(
+        default="",
         to="plans.TSchedule",
-        to_field="JobNo",
+        to_field="jobno",
         verbose_name="工作编号",
         on_delete=models.CASCADE,
     )
-    PartNo = models.CharField(
+    partno = models.CharField(
         verbose_name="机种名称",
         max_length=15,
     )
@@ -92,13 +93,14 @@ class TORTReports(models.Model):
 
 class TORTReportOverview(models.Model):
     id = models.AutoField(primary_key=True)
-    JobNo = models.ForeignKey(
+    jobno = models.ForeignKey(
         to="plans.TSchedule",
-        to_field="JobNo",
+        to_field="jobno",
         verbose_name="工作编号",
         on_delete=models.CASCADE,
+        default="",
     )
-    PartNo = models.CharField(
+    partno = models.CharField(
         verbose_name="机种名称",
         max_length=15,
     )

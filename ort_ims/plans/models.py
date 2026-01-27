@@ -24,7 +24,7 @@ rename_sn_file = RenameFile("sn_files/")
 
 class TSchedule(models.Model):
     id = models.AutoField(primary_key=True)
-    JobNo = models.CharField(
+    jobno = models.CharField(
         verbose_name="工作编号",
         max_length=20,
         unique=True,
@@ -34,7 +34,7 @@ class TSchedule(models.Model):
         default=False,
         choices=((False, "领用"), (True, "送测")),
     )
-    Product = models.ForeignKey(
+    product = models.ForeignKey(
         verbose_name="产品类型",
         to="managements.TProductType",
         to_field="id",
@@ -42,7 +42,7 @@ class TSchedule(models.Model):
         blank=True,
         on_delete=models.SET_NULL,
     )
-    Customer = models.ForeignKey(
+    customer = models.ForeignKey(
         verbose_name="客户名称",
         to="managements.TCustCode",
         to_field="id",
@@ -50,16 +50,16 @@ class TSchedule(models.Model):
         blank=True,
         on_delete=models.SET_NULL,
     )
-    PartNo = models.CharField(
+    partno = models.CharField(
         verbose_name="机种名",
         max_length=15,
     )
-    Stage = models.IntegerField(
+    stage = models.IntegerField(
         verbose_name="阶段",
         default=1,
         choices=((1, "MP"), (2, "MVT"), (3, "DVT"), (4, "EVT")),
     )
-    TestItem = models.ForeignKey(
+    test_item = models.ForeignKey(
         verbose_name="测试项目",
         to="managements.TTestItem",
         to_field="id",
@@ -68,53 +68,53 @@ class TSchedule(models.Model):
         blank=True,
         on_delete=models.SET_NULL,
     )
-    SampleSize = models.IntegerField(
+    qty = models.IntegerField(
         verbose_name="样品数",
         default=3,
     )
-    TestPeriod = models.IntegerField(
+    test_period = models.IntegerField(
         verbose_name="试验时间",
     )
-    Owner = models.CharField(
+    owner = models.CharField(
         verbose_name="负责人",
         max_length=50,
         default="NA",
     )
-    StartDate = models.DateField(
+    start_date = models.DateField(
         verbose_name="开始日期",
     )
-    EndDate = models.DateField(
+    end_date = models.DateField(
         verbose_name="结束日期",
         null=True,
         blank=True,
     )
-    Status = models.IntegerField(
+    status = models.IntegerField(
         verbose_name="完成状态",
         default=1,
         choices=((1, "Ongoing"), (2, "Close"), (3, "Pending")),
     )
-    Upload_Elab = models.BooleanField(
+    upload_elab = models.BooleanField(
         verbose_name="上传系统",
         null=True,
         blank=True,
         default=False,
         choices=((False, "未上传"), (True, "已上传")),
     )
-    Work_Order = models.CharField(
+    workorder = models.CharField(
         verbose_name="工令",
         max_length=40,
         unique=True,
         null=True,
         blank=True,
     )
-    Remark = models.TextField(
+    remark = models.TextField(
         verbose_name="备注",
         default="",
         blank=True,
     )
 
     def __str__(self):
-        return self.JobNo
+        return self.jobno
 
 
 class TCheckouts(models.Model):
@@ -127,7 +127,7 @@ class TCheckouts(models.Model):
         max_length=20,
         unique=True,
     )
-    PartNo = models.CharField(
+    partno = models.CharField(
         verbose_name="机种名称",
         max_length=15,
     )
@@ -135,35 +135,48 @@ class TCheckouts(models.Model):
         verbose_name="领出数量",
         default=3,
     )
-    SN = models.TextField(
+    sn = models.TextField(
         verbose_name="序列号",
         blank=True,
         default="",
     )
-    DC = models.CharField(
+    dc = models.CharField(
         verbose_name="周期",
         max_length=8,
     )
-    REV = models.CharField(
+    rev = models.CharField(
         verbose_name="版本",
         max_length=10,
     )
-    Work_Order = models.CharField(
+    workorder = models.CharField(
         verbose_name="工令",
         max_length=40,
         unique=True,
     )
-    Remark = models.TextField(
-        verbose_name="备注",
-        default="",
-        blank=True,
-    )
-    checkout_status = models.IntegerField(
-        verbose_name="领出状态",
+    rt_workorder = models.CharField(
+        verbose_name="回线RT工令",
+        max_length=40,
         null=True,
         blank=True,
+    )
+    return_no = models.CharField(
+        verbose_name="退料单号",
+        max_length=20,
+        null=True,
+        blank=True,
+    )
+    return_qty = models.IntegerField(
+        verbose_name="入库数量",
+        default=0,
+    )
+    return_date = models.DateField(
+        verbose_name="入库日期",
+        default=timezone.now,
+    )
+    status = models.IntegerField(
+        verbose_name="单体状态",
         default=2,
-        choices=((1, "未领用"), (2, "已领用"), (3, "已归还")),
+        choices=((1, "未领用"), (2, "已领用"), (3, "已归还"), (4, "已报废")),
     )
     sn_file = models.FileField(
         verbose_name="序列号文件",
@@ -171,6 +184,11 @@ class TCheckouts(models.Model):
         null=True,
         blank=True,
     )
+    remark = models.TextField(
+        verbose_name="备注",
+        default="",
+        blank=True,
+    )
 
     def __str__(self):
-        return self.Work_Order
+        return self.workorder

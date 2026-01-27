@@ -61,6 +61,10 @@
                     <th> <span class="text-nowrap">版本</span> </th>
                     <th> <span class="text-nowrap">工令</span> </th>
                     <th> <span class="text-nowrap">领出状态</span> </th>
+                    <th> <span class="text-nowrap">回线RT工令</span> </th>
+                    <th> <span class="text-nowrap">退料单号</span> </th>
+                    <th> <span class="text-nowrap">入库数量</span> </th>
+                    <th> <span class="text-nowrap">入库日期</span> </th>
                     <th> <span class="text-nowrap">备注</span> </th>
                 </tr>
             </thead>
@@ -72,21 +76,25 @@
                     <!-- <td class="text-center align-middle"> {{ checkout.id }} </td> -->
                     <td class="align-middle"> {{ checkout.checkout_no }} </td>
                     <td class="align-middle text-nowrap"> {{ checkout.checkout_date|date:"Y/m/d" }} </td>
-                    <td class="align-middle"> {{ checkout.PartNo }} </td>
+                    <td class="align-middle"> {{ checkout.partno }} </td>
                     <td class="align-middle"> {{ checkout.checkout_qty }} </td>
                     <td class="align-middle content-ellipsis">
                         {% if checkout.sn_file %}
                         <a href="{{ checkout.sn_file.url }}" target="_blank">
                             {{checkout.sn_file.name|basename}}</a>
                         {% else %}
-                        {{ checkout.SN|escape|linebreaksbr }}
+                        {{ checkout.sn|escape|linebreaksbr }}
                         {% endif %}
                     </td>
-                    <td class="align-middle"> {{ checkout.DC }} </td>
-                    <td class="align-middle"> {{ checkout.REV }} </td>
-                    <td class="align-middle text-nowrap"> {{ checkout.Work_Order }} </td>
-                    <td class="align-middle"> {{ checkout.get_checkout_status_display }} </td>
-                    <td class="align-middle content-ellipsis"> {{ checkout.Remarks }} </td>
+                    <td class="align-middle"> {{ checkout.dc }} </td>
+                    <td class="align-middle"> {{ checkout.rev }} </td>
+                    <td class="align-middle text-nowrap"> {{ checkout.workorder }} </td>
+                    <td class="align-middle"> {{ checkout.get_status_display }} </td>
+                    <td class="align-middle"> {{ checkout.rt_workorder }} </td>
+                    <td class="align-middle"> {{ checkout.return_no }} </td>
+                    <td class="align-middle"> {{ checkout.return_qty }} </td>
+                    <td class="align-middle"> {{ checkout.return_date }} </td>
+                    <td class="align-middle content-ellipsis"> {{ checkout.remark }} </td>
                 </tr>
                 {% empty %}
                 <tr>

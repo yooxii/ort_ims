@@ -85,7 +85,7 @@ def edit_checkouts(request: HttpRequest, pk=0):
 
         # 跳转到排程编辑页面
         if "save_and_schedule" in request.POST:
-            sch = TSchedule.objects.filter(Work_Order=obj.Work_Order).first()
+            sch = TSchedule.objects.filter(Work_Order=obj.workorder).first()
             if sch:
                 return redirect("plans:edit_schedules", sch.id)
             return redirect("plans:add_schedules", pk=obj.id)
@@ -235,7 +235,7 @@ def add_schedules(request, pk):
     if request.method == "GET":
         ###### 自动生成JobNo ######
         latest_entry = TSchedule.objects.order_by("-id").first()
-        latest_job_no = latest_entry.JobNo if latest_entry else "01"
+        latest_job_no = latest_entry.jobno if latest_entry else "01"
         now = datetime.now()
         year_month = now.strftime("%y%m")
         # 如果最新JobNo的年月和当前年月相同，则自动生成下一个JobNo
@@ -250,17 +250,17 @@ def add_schedules(request, pk):
             obj = get_object_or_404(TCheckouts, id=pk)
             form = ScheduleForm(
                 initial={
-                    "JobNo": cur_job_no,
-                    "PartNo": obj.PartNo,
-                    "SampleSize": obj.checkout_qty,
-                    "Work_Order": obj.Work_Order,
-                    "StartDate": obj.checkout_date,
+                    "jobno": cur_job_no,
+                    "partno": obj.partno,
+                    "qty": obj.checkout_qty,
+                    "workorder": obj.workorder,
+                    "start_date": obj.checkout_date,
                 },
             )
         else:
             form = ScheduleForm(
                 initial={
-                    "JobNo": cur_job_no,
+                    "jobno": cur_job_no,
                 },
             )
         return render(request, template_name, {"title": title_text, "form": form})

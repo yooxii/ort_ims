@@ -1,13 +1,117 @@
 {% extends "ort_base.html" %}
 {% load static %}
 
-{% block title %}Burn-168报告{% endblock title %}
+{% block title %}Burn-168H报告{% endblock title %}
 
 {% block header %}
 {% endblock header %}
 
 {% block content %}
 <div>
-    <h2>burn</h2>
+    <h1 class="text-center">Burn-168H</h1>
 </div>
+
+<script type="module">
+    import { createApp, reactive, watch } from "{% static 'plugins/vue.esm-browser.prod.js' %}";
+
+    const app = createApp({
+        setup() {
+            const testHeaders = [
+                { name: '机种名称', id: 'partno', type: 'text' },
+                { name: '测试人员', id: 'technician', type: 'text' },
+                { name: '测试开始时间', id: 'startdate', type: 'date' },
+                { name: '测试结束时间', id: 'enddate', type: 'date' }
+            ];
+            const testDescription = "";
+            const testPictures = [];
+            const UUTPlaces = [
+                { name: 'B/I Room No.', id: 'BI_Room_No', type: 'text' },
+                { name: 'B/I Area', id: 'BI_Area', type: 'text' },
+                { name: 'B/I Place', id: 'BI_Place', type: 'text' },
+            ]
+            const UUTSets = [
+                { name: '版本', id: 'Rev', type: 'text' },
+                { name: '周期', id: 'DC', type: 'week' },
+                { name: '序列号', id: 'SN', type: 'text' },
+                { name: '工令', id: 'WorkOrder', type: 'text' },
+            ]
+            const testResults = [
+                { name: '外观(前)', id: 'PRE_VisualInspection', type: 'text' },
+                { name: '功能', id: 'PRE_FunctionCheck', type: 'text' },
+                { name: '外观(后)', id: 'POST_VisualInspection', type: 'text' },
+                { name: '功能', id: 'POST_FunctionCheck', type: 'text' },
+            ]
+
+            const headerData = reactive({
+                partno: '',
+                technician: '',
+                startdate: '',
+                enddate: ''
+            });
+
+            // 监听 startdate 变化
+            watch(
+                () => headerData.startdate,
+                (newVal) => {
+                    if (newVal) {
+                        const startDate = new Date(newVal);
+                        const endDate = new Date(startDate);
+                        endDate.setDate(startDate.getDate() + 7);
+                        headerData.enddate = endDate.toISOString().split('T')[0];
+                    }
+                },
+            );
+
+            return {
+                testHeaders,
+                headerData,
+                UUTPlaces,
+                UUTSets,
+                testResults
+            };
+        }
+    });
+    app.mount('#burn-app');
+</script>
+
+<div id="burn-app" class="container-xl">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% verbatim %}
+        <div class="form-row">
+            <div class="form-group col-md-2 mb-3" v-for="testHeader in testHeaders" :key="testHeader.id">
+                <label :for="testHeader.id">{{ testHeader.name }}</label>
+                <input :type="testHeader.type" class="textinput form-control" :id="testHeader.id"
+                    :name="testHeader.id" />
+            </div>
+            <div class="form-group col-md-2 mb-3">
+                <label for="" id_qty">单体数量</label>
+                <input type="number" class="textinput form-control" id="id_qty" name="qty" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-sm-3 mb-3" v-for="UUTSet in UUTSets" :key="UUTSet.id">
+                <label :for="UUTSet.id">{{ UUTSet.name }}</label>
+                <input :type="UUTSet.type" class="textinput form-control" :id="UUTSet.id" :name="UUTSet.id" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-sm-2 mb-3" v-for="UUTPlace in UUTPlaces" :key="UUTPlace.id">
+                <label :for="UUTPlace.id">{{ UUTPlace.name }}</label>
+                <input :type="UUTPlace.type" class="textinput form-control" :id="UUTPlace.id" :name="UUTPlace.id" />
+            </div>
+            <div class="form-group col-sm-1 mb-3" v-for="testResult in testResults" :key="testResult.id">
+                <label :for="testResult.id">{{ testResult.name }}</label>
+                <input :type="testResult.type" class="textinput form-control" :id="testResult.id"
+                    :name="testResult.id" />
+            </div>
+        </div>
+        {% endverbatim %}
+
+        <div class="row mb-5 pl-3 text-right">
+            <button type="submit" class="btn btn-primary">提交</button>
+        </div>
+    </form>
+</div>
+
 {% endblock content %}

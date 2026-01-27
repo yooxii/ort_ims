@@ -69,22 +69,22 @@
             <tbody>
                 {% for schedule in object_list %}
                 <tr data-schedule-id="{{ schedule.id }}">
-                    <td class="content-ellipsis"> {{ schedule.JobNo }} </td>
+                    <td class="content-ellipsis"> {{ schedule.jobno }} </td>
                     <td> {{ schedule.get_QRT_display }} </td>
-                    <td> {{ schedule.Product.product_type }} </td>
-                    <td> {{ schedule.Customer.cust_name }} </td>
-                    <td class="content-ellipsis"> {{ schedule.PartNo }} </td>
-                    <td> {{ schedule.get_Stage_display }} </td>
-                    <td class="content-ellipsis"> {{ schedule.TestItem }} </td>
-                    <td> {{ schedule.SampleSize }} </td>
-                    <td> {{ schedule.TestPeriod }} </td>
-                    <td class="content-ellipsis"> {{ schedule.Owner }} </td>
-                    <td> {{ schedule.StartDate|date:"Y/m/d" }} </td>
-                    <td> {{ schedule.EndDate|date:"Y/m/d" }} </td>
-                    <td> {{ schedule.get_Status_display }} </td>
-                    <td> {{ schedule.get_Upload_Elab_display }} </td>
-                    <td class="content-ellipsis"> {{ schedule.Work_Order }} </td>
-                    <td class="content-ellipsis"> {{ schedule.Remark }} </td>
+                    <td> {{ schedule.product.product_type }} </td>
+                    <td> {{ schedule.customer.cust_name }} </td>
+                    <td class="content-ellipsis"> {{ schedule.partno }} </td>
+                    <td> {{ schedule.get_stage_display }} </td>
+                    <td class="content-ellipsis"> {{ schedule.test_item }} </td>
+                    <td> {{ schedule.qty }} </td>
+                    <td> {{ schedule.test_period }} </td>
+                    <td class="content-ellipsis"> {{ schedule.owner }} </td>
+                    <td> {{ schedule.start_date|date:"Y/m/d" }} </td>
+                    <td> {{ schedule.end_date|date:"Y/m/d" }} </td>
+                    <td> {{ schedule.get_status_display }} </td>
+                    <td> {{ schedule.get_upload_elab_display }} </td>
+                    <td class="content-ellipsis"> {{ schedule.workorder }} </td>
+                    <td class="content-ellipsis"> {{ schedule.remark }} </td>
                 </tr>
                 {% empty %}
                 <tr>

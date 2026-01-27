@@ -33,7 +33,7 @@ def harmonic_report(request: HttpRequest):
         harmonic_path = REPORT_TEMPLATE_DIR / "harmonic"
         har_templates = []
         for template in Path.iterdir(harmonic_path):
-            harmonic_id = template.split(" ")[0]
+            harmonic_id = str(template).split(" ")[0]
             har_templates.append({"id": harmonic_id, "name": template})
         return render(request, "reports/harmonic.html", {"templates": har_templates})
     if request.method == "POST":

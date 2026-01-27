@@ -10,7 +10,6 @@
     <!-- <link rel="stylesheet" href="{% static 'css/index.css' %}" /> -->
     <script src="{% static 'plugins/jQuery/jquery-3.7.1.min.js' %}"></script>
     <script src="{% static 'plugins/bootstrap4.6.2/js/bootstrap.bundle.min.js' %}"></script>
-    <!-- <script src="{% static 'js/petite-vue.iife.js' %}" defer init></script> -->
     <style>
         header img {
             width: 16px;
@@ -34,58 +33,45 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>计划</span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="Dropdown_plan">
-                            <a class="dropdown-item" href="{% url 'plans:checkouts' %}">
-                                <img src="{% static 'img/icon/icn_wuzilingtuiliaochaxun.svg' %}" alt="领用" />
-                                <span>领用</span>
-                            </a>
+                            <a class="dropdown-item" href="{% url 'plans:checkouts' %}"> <span>领用</span> </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'plans:schedules' %}"><img
-                                    src="{% static 'img/icon/paicheng.svg' %}" alt="排程" /><span>排程</span></a>
+                            <a class="dropdown-item" href="{% url 'plans:schedules' %}"> <span>排程</span> </a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="Dropdown_report" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>报告</span>
-                        </a>
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span>报告</span> </a>
                         <div class="dropdown-menu" aria-labelledby="Dropdown_report">
-                            <a class="dropdown-item" href="{% url 'reports:amz_report' %}"><img
-                                    src="{% static 'img/icon/amz.svg' %}" alt="AMZ" /><span>AMZ</span></a>
+                            <a class="dropdown-item" href="{% url 'reports:amz_report' %}"> <span>AMZ</span> </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'reports:burn_report' %}"><img
-                                    src="{% static 'img/icon/a-mxburn.svg' %}" alt="burn" /><span>Burn-168</span></a>
+                            <a class="dropdown-item" href="{% url 'reports:burn_report' %}"> <span>Burn-168</span> </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'reports:emc_report' %}"><img
-                                    src="{% static 'img/icon/a-mxburn.svg' %}" alt="EMC" /><span>EMC</span></a>
+                            <a class="dropdown-item" href="{% url 'reports:emc_report' %}"> <span>EMC</span> </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'reports:harmonic_report' %}"><img
-                                    src="{% static 'img/icon/a-mxburn.svg' %}"
-                                    alt="Harmonic" /><span>Harmonic</span></a>
+                            <a class="dropdown-item" href="{% url 'reports:harmonic_report' %}"> <span>Harmonic</span>
+                            </a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="Dropdown_management" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>管理</span>
-                        </a>
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span>管理</span> </a>
                         <div class="dropdown-menu" aria-labelledby="Dropdown_management">
-                            <a class="dropdown-item"
-                                href="{% url 'managements:custproducts' %}"><span>客户&amp;产品</span></a>
+                            <a class="dropdown-item" href="{% url 'managements:custproducts' %}"> <span>客户&amp;产品</span>
+                            </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'managements:testitems' %}"><span>测试项目</span></a>
+                            <a class="dropdown-item" href="{% url 'managements:testitems' %}"> <span>测试项目</span> </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{%url 'managements:technicians' %}"><span>测试人员</span></a>
+                            <a class="dropdown-item" href="{%url 'managements:technicians' %}"> <span>测试人员</span> </a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href=""><img src="{% static 'img/icon/sousuo_1.svg' %}"
-                                alt="审查" /><span>审查</span></a>
+                        <a class="nav-link" href=""> <span>审查</span> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href=""><img src="{% static 'img/icon/fankui_1.svg' %}"
-                                alt="反馈" /><span>反馈</span></a>
+                        <a class="nav-link" href=""> <span>反馈</span> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href=""><img src="{% static 'img/icon/bangzhu_3.svg' %}"
-                                alt="帮助" /><span>帮助</span></a>
+                        <a class="nav-link" href=""> <span>帮助</span> </a>
                     </li>
                 </ul>
                 <!-- <form class="form-inline my-2 my-lg-0">

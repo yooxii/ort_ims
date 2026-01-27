@@ -9,11 +9,12 @@
 {% block content %}
 <h2>Harmonic报告上传</h2>
 <div>
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" class="form form-row" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="input-group mb-3">
-            <label class="input-group-text" for="upload_har_report">上传报告</label>
-            <input type="file" class="form-control" id="upload_har_report" name="upload_har_report">
+            <label class="custom-file-label" for="upload_har_report">上传报告</label>
+            <input type="file" accept=".xls,.xlsx" class="custom-file-input" id="upload_har_report"
+                name="upload_har_report">
         </div>
         <input class="btn btn-primary" type="submit" value="提交">
     </form>

@@ -28,15 +28,12 @@ class ORTReportsForm(forms.ModelForm):
             Row(
                 Column("report_type", css_class="form-group col-md-6 mb-0"),
                 Column("close_date", css_class="form-group col-md-6 mb-0"),
-                css_class="form-row",
             ),
             Row(
                 Column("report_file", css_class="form-group col-md-12 mb-0"),
-                css_class="form-row",
             ),
             Row(
                 Column("Remark", css_class="form-group col-md-12 mb-0"),
-                css_class="form-row",
             ),
             Div(
                 Submit("submit", "提交", css_class="btn btn-primary"),
@@ -58,7 +55,6 @@ class ORTReportOverviewForm(forms.ModelForm):
         self.helper.layout = Layout(
             Row(
                 Column("overview_file", css_class="form-group col-md-12 mb-0"),
-                css_class="form-row",
             ),
             Div(
                 Submit("submit", "提交", css_class="btn btn-primary"),

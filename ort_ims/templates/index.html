@@ -14,17 +14,9 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">计划</h5>
-                    <p class="card-text">添加和管理领用、排程</p>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <span>领用</span>
-                            <a href="{% url 'plans:checkouts' %}" class="btn btn-primary">进入领用</a>
-                        </li>
-                        <li class="list-group-item">
-                            <span>排程</span>
-                            <a href="{% url 'plans:schedules' %}" class="btn btn-primary">进入排程</a>
-                        </li>
-                    </ul>
+                    <p class="card-text">管理领退、排程</p>
+                    <a href="{% url 'plans:checkouts' %}" class="btn btn-primary">领退</a>
+                    <a href="{% url 'plans:schedules' %}" class="btn btn-primary">排程</a>
                 </div>
             </div>
         </div>
@@ -32,17 +24,22 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">报告</h5>
-                    <p class="card-text">管理ORT报告</p>
-                    <a href="{% url 'reports:amz_report' %}" class="btn btn-primary">进入</a>
+                    <p class="card-text">ORT报告</p>
+                    <a href="{% url 'reports:amz_report' %}" class="btn btn-primary">亚马逊</a>
+                    <a href="{% url 'reports:burn_report' %}" class="btn btn-primary">烘烤</a>
+                    <a href="{% url 'reports:emc_report' %}" class="btn btn-primary">传导</a>
+                    <a href="{% url 'reports:harmonic_report' %}" class="btn btn-primary">谐波</a>
                 </div>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">计划</h5>
-                    <p class="card-text">领用、排程</p>
-                    <a href="{% url 'plans:index' %}" class="btn btn-primary">进入</a>
+                    <h5 class="card-title">管理</h5>
+                    <p class="card-text">管理实验项目、实验人员和客户</p>
+                    <a href="{% url 'managements:testitems' %}" class="btn btn-primary">实验项目</a>
+                    <a href="{% url 'managements:technicians' %}" class="btn btn-primary">实验人员</a>
+                    <a href="{% url 'managements:custproducts' %}" class="btn btn-primary">客户</a>
                 </div>
             </div>
         </div>
