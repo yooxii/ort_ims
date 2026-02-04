@@ -42,3 +42,7 @@ def harmonic_report(request: HttpRequest):
         inspect(har_report.values())
         return render(request, "reports/harmonic.html")
     return None
+
+
+def thermalshock_report(request: HttpRequest):
+    return render(request, "reports/thermalshock.html")
